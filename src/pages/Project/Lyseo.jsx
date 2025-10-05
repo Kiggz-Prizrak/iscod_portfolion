@@ -2,17 +2,45 @@ import React from "react";
 import Hero from "../../components/Hero";
 import ProjectBanner from "../../components/ProjectBanner";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faJs, faReact, faNodeJs } from "@fortawesome/free-brands-svg-icons";
 import {
-  faJs,
-  faReact,
-  faNodeJs,
   faRust,
+  faDocker,
+  faLinux,
+  faGit,
+  faGithub,
+  faLinkedin,
+  faDev,
+  faStackOverflow,
+  faOpenai,
 } from "@fortawesome/free-brands-svg-icons";
+import { faHtml5, faCss3Alt } from "@fortawesome/free-brands-svg-icons";
 const Lyseo = () => {
+  const icons = [faJs, faReact, faNodeJs, faRust, faHtml5, faCss3Alt];
+  const gradients = [
+    "linear-gradient(135deg, #ff00ff, #00ffff)",
+    "linear-gradient(90deg, #ffcc00, #ff00ff)",
+    "linear-gradient(120deg, #00ffff, #ff007f)",
+    "linear-gradient(45deg, #00ff9f, #7d00ff)",
+    "linear-gradient(60deg, #ff007f, #00aaff)",
+    "linear-gradient(100deg, #ff00aa, #00ffff)",
+  ];
   return (
     <main className="bg-nebula bg-stars ">
       <ProjectBanner title="Lyseo" subtitle="Rust – Performance & Sécurité" />
+
       <div className="project ">
+        <div className="futures__block bg-grid">
+          <FontAwesomeIcon icon={faRust} className="fa-circle-bg fa-glitch" />
+          <FontAwesomeIcon icon={faDocker} className="fa-circle-bg fa-glitch" />
+          <FontAwesomeIcon icon={faGit} className="fa-circle-bg fa-glitch" />
+          <FontAwesomeIcon icon={faGithub} className="fa-circle-bg fa-glitch" />
+          <FontAwesomeIcon
+            icon={faLinkedin}
+            className="fa-circle-bg fa-glitch"
+          />
+          <FontAwesomeIcon icon={faLinux} className="fa-circle-bg fa-glitch" />
+        </div>
         <div style={{ display: "flex", gap: "2rem", fontSize: "4rem" }}>
           <FontAwesomeIcon icon={faJs} className="fa-neon" size="4px" />
           <FontAwesomeIcon icon={faReact} className="fa-gradient" size="4px" />
@@ -27,50 +55,16 @@ const Lyseo = () => {
             size="4px"
           />
         </div>
-        <section className="project__section bg-grid">
-          <h2 className="project__subtitle neon-yellow">Présentation</h2>
-
-          <div className="presentation__content">
-            <p>
-              <strong>Lyseo</strong> est un projet innovant centré sur la
-              <span className="highlight-blue"> performance logicielle</span> et
-              la
-              <span className="highlight-pink"> sécurité système</span>,
-              développé autour du
-              <strong> langage Rust</strong>.
-            </p>
-
-            <p>
-              Son objectif principal : démontrer qu’il est possible de concevoir
-              une application
-              <strong> rapide</strong>,<strong> sûre</strong> et
-              <strong> robuste</strong>, tout en exploitant la gestion de la
-              mémoire et la concurrence intrinsèque à Rust.
-            </p>
-
-            <p>
-              Conçu comme une véritable <strong>vitrine technologique</strong>,
-              Lyseo répond à un enjeu fondamental : offrir une alternative
-              moderne aux langages traditionnels comme
-              <strong> C</strong> ou <strong>C++</strong>, en garantissant
-              <span className="highlight-pink"> sécurité mémoire</span> et
-              <span className="highlight-blue"> fiabilité élevée</span> sans
-              sacrifier la
-              <strong> performance</strong>.
-            </p>
-
-            <p>
-              En pratique, Lyseo illustre la puissance de Rust dans des domaines
-              où
-              <strong> chaque milliseconde compte</strong> :
-            </p>
-
-            <ul>
-              <li>⚙️ Traitement de données intensif</li>
-              <li>🧠 Gestion d’outils systèmes</li>
-              <li>🌐 Développement de services backend critiques</li>
-            </ul>
-          </div>
+        <section className="project__meta">
+          <p>
+            📅 <strong>Période :</strong> 2025 — projet personnel de recherche
+            et d’expérimentation autour du langage Rust.
+          </p>
+          <p>
+            🧠 <strong>Réalisation :</strong> développé en{" "}
+            <span className="highlight-blue">autonomie complète</span>, dans une
+            démarche d’apprentissage et d’exploration technique.
+          </p>
         </section>
 
         <section className="project__section bg-grid">
@@ -431,6 +425,33 @@ const Lyseo = () => {
             <li>🧠 Autonomie et rigueur dans la gestion de projet</li>
             <li>💬 Collaboration technique et communication</li>
           </ul>
+          <div
+            className="futures__block bg-grid"
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-around",
+            }}
+          >
+            <FontAwesomeIcon icon={faRust} className="fa-circle-bg fa-glitch" />
+            <FontAwesomeIcon
+              icon={faDocker}
+              className="fa-circle-bg fa-glitch"
+            />
+            <FontAwesomeIcon icon={faGit} className="fa-circle-bg fa-glitch" />
+            <FontAwesomeIcon
+              icon={faGithub}
+              className="fa-circle-bg fa-glitch"
+            />
+            <FontAwesomeIcon
+              icon={faLinkedin}
+              className="fa-circle-bg fa-glitch"
+            />
+            <FontAwesomeIcon
+              icon={faLinux}
+              className="fa-circle-bg fa-glitch"
+            />
+          </div>
         </section>
       </div>
     </main>
