@@ -4,6 +4,12 @@
 
 @use "base/fonts";
 
+@use "components/header.scss";
+@use "components/hero.scss";
+@use "components/timeline.scss";
+@use "components/footer.scss";
+
+
 @use "layout/body";
 
 @use "./abstracts/theme.scss" as *;

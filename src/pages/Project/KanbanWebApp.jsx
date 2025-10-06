@@ -20,16 +20,7 @@ const KanbanWebApp = () => {
         subtitle="Application de gestion agile – React · Redux · LocalStorage"
       />
 
-      <div
-        className="project__tech-banner"
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          gap: "2rem",
-          margin: "2rem 0",
-          fontSize: "4rem",
-        }}
-      >
+      <div className="project__tech-banner">
         <FontAwesomeIcon icon={faReact} className="fa-circle-bg fa-glitch" />
         <FontAwesomeIcon icon={faJs} className="fa-circle-bg fa-glitch" />
         <FontAwesomeIcon icon={faCss3Alt} className="fa-circle-bg fa-glitch" />

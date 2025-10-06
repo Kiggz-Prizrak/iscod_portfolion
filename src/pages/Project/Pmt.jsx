@@ -17,16 +17,7 @@ const Pmt = () => {
         subtitle="application fullstack Java Spring Boot · Angular · Docker · CI/CD"
       />
 
-      <div
-        className="project__tech-banner"
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          gap: "2rem",
-          margin: "2rem 0",
-          fontSize: "4rem",
-        }}
-      >
+      <div className="project__tech-banner">
         <FontAwesomeIcon icon={faJava} className="fa-circle-bg fa-glitch" />
         <FontAwesomeIcon icon={faAngular} className="fa-circle-bg fa-glitch" />
         <FontAwesomeIcon icon={faDocker} className="fa-circle-bg fa-glitch" />

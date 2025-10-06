@@ -22,13 +22,7 @@ const Groupomania = () => {
       />
       <div
         className="project__tech-banner"
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          gap: "2rem",
-          margin: "2rem 0",
-          fontSize: "4rem",
-        }}
+     
       >
         <FontAwesomeIcon icon={faVuejs} className="fa-circle-bg fa-glitch" />
         <FontAwesomeIcon icon={faNodeJs} className="fa-circle-bg fa-glitch" />
@@ -299,18 +293,18 @@ const Groupomania = () => {
               <h3>Analyse du besoin et définition des objectifs</h3>
               <ul>
                 <li>
-                  ✦ Identifier les fonctionnalités clés d’un réseau social
+                   Identifier les fonctionnalités clés d’un réseau social
                   interne.
                 </li>
                 <li>
-                  ✦ Définir les rôles utilisateurs (membre, modérateur, admin).
+                   Définir les rôles utilisateurs (membre, modérateur, admin).
                 </li>
                 <li>
-                  ✦ Concevoir une base de données relationnelle cohérente avec
+                   Concevoir une base de données relationnelle cohérente avec
                   MySQL.
                 </li>
                 <li>
-                  ✦ Planifier la structure de l’API et les routes principales.
+                   Planifier la structure de l’API et les routes principales.
                 </li>
               </ul>
             </div>
@@ -445,16 +439,16 @@ const Groupomania = () => {
 
             <ul>
               <li>
-                ✦ Conception et sécurisation d’une API REST complète (CRUD, JWT,
+                 Conception et sécurisation d’une API REST complète (CRUD, JWT,
                 Bcrypt)
               </li>
-              <li>✦ Gestion des rôles utilisateurs (admin / user)</li>
+              <li> Gestion des rôles utilisateurs (admin / user)</li>
               <li>
-                ✦ Manipulation de la base de données avec{" "}
+                 Manipulation de la base de données avec{" "}
                 <strong>Sequelize ORM</strong>
               </li>
               <li>
-                ✦ Maîtrise du cycle complet d’un projet full stack (front ↔
+                 Maîtrise du cycle complet d’un projet full stack (front ↔
                 back)
               </li>
               <li>✦ Structuration du code et documentation technique</li>

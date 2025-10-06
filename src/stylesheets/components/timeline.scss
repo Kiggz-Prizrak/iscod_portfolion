@@ -1,0 +1,434 @@
+@use "../abstracts/theme.scss" as *;
+
+/* ======================================================================
+   TIMELINE SYNTHWAVE
+   ====================================================================== */
+
+.tl {
+  position: relative;
+  padding-top: clamp(2rem, 4vw, 3rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .card {
+    margin: 0px 20px;
+  }
+
+  .timeline__title {
+    padding: 25px;
+    z-index: 1;
+    border-radius: 70px;
+    background-color: black;
+    border: 4px solid $clr-sunset;
+
+    /* glow néon autour de la bordure */
+    box-shadow: 0 0 6px rgba($clr-sunset, 0.9), 0 0 20px rgba($clr-sunset, 0.7),
+      0 0 45px rgba($clr-sunset, 0.6);
+  }
+  /* Ligne centrale néon avec "gap" sous le titre */
+  &__line {
+    position: absolute;
+    inset: 0 auto 0 50%;
+    width: 6px;
+    transform: translateX(-50%);
+    background: linear-gradient(
+      180deg,
+      rgba($clr-blue, 0.95) 0,
+      rgba($clr-violet, 0.7) 45%,
+      transparent 45%,
+      transparent 55%,
+      rgba($clr-blue, 0.95) 55%,
+      rgba($clr-violet, 0.7) 100%
+    );
+    background-size: 100% 200%;
+    animation: lineFlow 10s linear infinite;
+    box-shadow: 0 0 10px rgba($clr-blue, 0.9), 0 0 26px rgba($clr-blue, 0.6),
+      0 0 48px rgba($clr-violet, 0.5);
+    border-radius: 999px;
+  }
+
+  @keyframes lineFlow {
+    0% {
+      background-position: 0% 0%;
+    }
+    100% {
+      background-position: 0% 100%;
+    }
+  }
+
+  /* Liste */
+  &__list {
+    position: relative;
+    display: grid;
+    scroll-snap-type: y proximity;
+  }
+
+  /* Ligne (row) */
+  &__row {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+
+    /* animation reveal */
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity 0.5s ease, transform 0.6s ease, filter 0.5s ease;
+    filter: saturate(0.9);
+
+    &.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+      filter: saturate(1.1);
+    }
+
+    &:nth-child(2) {
+      transition-delay: 0.05s;
+    }
+    &:nth-child(3) {
+      transition-delay: 0.1s;
+    }
+    &:nth-child(4) {
+      transition-delay: 0.15s;
+    }
+
+    scroll-snap-align: start;
+
+    &--left {
+      .tl__card {
+        grid-column: 1 / 2;
+      }
+    }
+    &--right {
+      .tl__card {
+        grid-column: 2 / 3;
+      }
+    }
+  }
+
+  /* Bras depuis le titre */
+  &__cardHead {
+    position: relative;
+  }
+  &__row--left .tl__cardHead::after,
+  &__row--right .tl__cardHead::after {
+    content: "";
+    position: absolute;
+    top: 1.1em; /* milieu visuel du titre */
+    height: 2px;
+    width: clamp(96px, 22vw, 220px);
+    background: linear-gradient(
+      90deg,
+      rgba($clr-pink, 0) 0%,
+      rgba($clr-pink, 0.8) 50%,
+      rgba($clr-pink, 0) 100%
+    );
+    background-size: 200% 100%;
+    animation: armFlow 6s linear infinite;
+    box-shadow: 0 0 12px rgba($clr-pink, 0.6);
+  }
+  &__row--left .tl__cardHead::after {
+    right: calc(100% + 8px);
+  }
+  &__row--right .tl__cardHead::after {
+    left: calc(100% + 8px);
+    transform: scaleX(-1);
+  }
+
+  @keyframes armFlow {
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: -200% 0;
+    }
+  }
+
+  /* Node */
+  &__node {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    border-radius: 999px;
+    background: $clr-bg-deep;
+    border: 2px solid $clr-pink;
+    box-shadow: 0 0 10px rgba($clr-pink, 0.85), 0 0 28px rgba($clr-violet, 0.45);
+    z-index: 1;
+    cursor: pointer;
+
+    &:focus-visible {
+      @include focus-ring($accent);
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 5px;
+      border-radius: 50%;
+      background: $clr-pink;
+      box-shadow: 0 0 10px rgba($clr-pink, 0.8);
+    }
+
+    &--major {
+      width: 28px;
+      height: 28px;
+      border-color: $clr-sunset;
+      box-shadow: 0 0 12px rgba($clr-sunset, 0.95),
+        0 0 36px rgba($clr-violet, 0.45);
+      animation: tlPulse 2.2s ease-in-out infinite;
+
+      &::after {
+        inset: 6px;
+        background: $clr-sunset;
+        box-shadow: 0 0 14px rgba($clr-sunset, 0.9);
+      }
+    }
+  }
+
+  @keyframes tlPulse {
+    0%,
+    100% {
+      box-shadow: 0 0 18px rgba($clr-sunset, 0.85),
+        0 0 42px rgba($clr-violet, 0.4);
+    }
+    50% {
+      box-shadow: 0 0 26px rgba($clr-sunset, 1),
+        0 0 60px rgba($clr-violet, 0.55);
+    }
+  }
+
+  /* Card */
+  &__card {
+    @include card;
+    position: relative;
+    padding: $sp-5;
+    border-radius: $radius-2xl;
+  }
+
+  &__period {
+    color: $clr-muted;
+    font-size: $fs-sm;
+    margin-bottom: 0.25rem;
+  }
+  &__title {
+    font-family: $font-heading;
+    font-size: $fs-lg;
+    letter-spacing: 0.02em;
+  }
+  &__context {
+    margin-top: 0.15rem;
+  }
+  &__sublist {
+    margin: $sp-3 0 0;
+    padding-left: 1.1rem;
+    li {
+      margin: 0.22rem 0;
+    }
+  }
+  &__tags {
+    margin-top: $sp-4;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    .btn--ghost {
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      font-size: $fs-xs;
+    }
+  }
+
+  /* Responsive */
+  @media (max-width: $bp-md) {
+    &__row {
+      grid-template-columns: 1fr;
+    }
+    &__row--left .tl__cardHead::after,
+    &__row--right .tl__cardHead::after {
+      display: none;
+    }
+    &__line {
+      left: 10px;
+      width: 4px;
+      transform: none;
+    }
+    &__node {
+      left: 10px;
+      transform: translate(-50%, -50%);
+    }
+    &__card {
+      grid-column: 1 / -1;
+      margin-left: 1.5rem;
+      border-radius: $radius-md;
+    }
+  }
+}
+
+/* Titre jaune néon (étapes majeures) */
+.neon-yellow {
+  color: $clr-sunset;
+  font-weight: 700;
+  text-shadow: 0 0 6px rgba($clr-sunset, 0.95), 0 0 22px rgba($clr-sunset, 0.75),
+    0 0 46px rgba($clr-sunset, 0.65);
+}
+@media (max-width: $bp-md) {
+  .neon-yellow {
+    text-shadow: 0 0 8px rgba($clr-sunset, 0.8);
+  }
+}
+
+/* 🌠 Starfield (petits points lumineux façon ciel étoilé) */
+.bg-stars {
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(
+        2px 2px at 20% 30%,
+        rgba($clr-white, 0.6),
+        transparent
+      ),
+      radial-gradient(1.5px 1.5px at 70% 60%, rgba($clr-blue, 0.7), transparent),
+      radial-gradient(1px 1px at 40% 80%, rgba($clr-pink, 0.8), transparent),
+      radial-gradient(
+        1.5px 1.5px at 85% 25%,
+        rgba($clr-violet, 0.6),
+        transparent
+      );
+    background-repeat: repeat;
+    background-size: 200px 200px;
+    animation: starsMove 40s linear infinite;
+    opacity: 0.3;
+  }
+}
+@keyframes starsMove {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -200px -200px;
+  }
+}
+
+/* 🌌 Dégradé radial néon (spotlight derrière le titre) */
+.bg-radial {
+  background: radial-gradient(
+    circle at top center,
+    rgba($clr-pink, 0.2) 0%,
+    rgba($clr-violet, 0.15) 35%,
+    rgba($clr-blue, 0.1) 60%,
+    transparent 85%
+  );
+}
+/* 🕹 Grille 3D subtile (façon hero mais plus discrète) */
+.bg-grid {
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(
+        to right,
+        rgba($clr-pink, 0.3) 1px,
+        transparent 1px
+      ),
+      linear-gradient(to top, rgba($clr-pink, 0.3) 1px, transparent 1px);
+    background-size: 60px 60px;
+    opacity: 0.25;
+    transform: perspective(600px) rotateX(65deg) scaleY(0.5);
+    transform-origin: bottom;
+    pointer-events: none;
+  }
+}
+/* 📺 Scanlines CRT rétro */
+.bg-scanlines {
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image: repeating-linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.05) 0,
+      rgba(255, 255, 255, 0.05) 1px,
+      transparent 1px,
+      transparent 3px
+    );
+    mix-blend-mode: overlay;
+    opacity: 0.15;
+  }
+}
+/* 💫 Nebula gradient (nuages colorés flous) */
+.bg-nebula {
+  background: radial-gradient(
+      circle at 20% 40%,
+      rgba($clr-pink, 0.2),
+      transparent 70%
+    ),
+    radial-gradient(circle at 80% 60%, rgba($clr-blue, 0.2), transparent 70%),
+    radial-gradient(circle at 50% 80%, rgba($clr-violet, 0.15), transparent 70%);
+}
+/* 🔺 Shapes géométriques flottants (triangles, cercles) */
+.bg-shapes {
+  position: relative;
+  overflow: hidden;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    border: 2px solid rgba($clr-blue, 0.3);
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    top: 10%;
+    left: 5%;
+    transform: rotate(25deg);
+    animation: floatShapes 12s ease-in-out infinite alternate;
+  }
+
+  &::after {
+    border-radius: 0;
+    border-color: rgba($clr-pink, 0.3);
+    width: 160px;
+    height: 160px;
+    bottom: 15%;
+    right: 8%;
+    top: auto;
+    left: auto;
+    transform: rotate(-15deg);
+    animation-duration: 16s;
+  }
+}
+@keyframes floatShapes {
+  from {
+    transform: translateY(0) rotate(0deg);
+  }
+  to {
+    transform: translateY(30px) rotate(15deg);
+  }
+}
+
+/* ⚡ Neon stripes (bandes diagonales animées) */
+.bg-stripes {
+  background-image: repeating-linear-gradient(
+    135deg,
+    rgba($clr-violet, 0.05) 0 20px,
+    rgba($clr-pink, 0.08) 20px 40px
+  );
+  animation: stripesMove 12s linear infinite;
+  background-size: 200% 200%;
+}
+@keyframes stripesMove {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 200% 200%;
+  }
+}

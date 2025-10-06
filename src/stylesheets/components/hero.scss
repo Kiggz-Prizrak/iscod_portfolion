@@ -1,0 +1,144 @@
+@use "../abstracts/theme.scss" as *;
+
+/* ======================================================================
+   HERO MAIN
+   ====================================================================== */
+
+.c-hero {
+  position: relative;
+  min-height: 100dvh;
+  overflow: hidden;
+  background: $grad-hero;
+
+  /* Overlay néon */
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+      80% 40% at 50% 90%,
+      rgba($clr-pink, 0.55) 0%,
+      rgba($clr-violet, 0.25) 35%,
+      rgba($clr-blue, 0.12) 55%,
+      transparent 70%
+    );
+    filter: blur(2px);
+    pointer-events: none;
+  }
+
+  /* Grille néon */
+  &__grid {
+    position: absolute;
+    left: 50%;
+    bottom: -12vh;
+    width: 160vw;
+    height: 70vh;
+    transform: translateX(-50%) perspective(800px) rotateX(65deg);
+    background-image: linear-gradient(
+        to right,
+        rgba($clr-pink, 0.6) 1px,
+        transparent 1px
+      ),
+      linear-gradient(to top, rgba($clr-pink, 0.6) 1px, transparent 1px);
+    background-size: 60px 60px, 60px 60px;
+    box-shadow: inset 0 0 60px 10px rgba($clr-pink, 0.35);
+    @include fade-top();
+    animation: heroGridScroll 12s linear infinite;
+  }
+
+  /* Contenu principal */
+  &__content {
+    position: relative;
+    z-index: $z-base;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: clamp(4rem, 8vw, 8rem) $sp-4;
+    text-align: center;
+
+    h1 {
+      font-family: $font-heading;
+      font-size: $fs-xxl;
+      letter-spacing: 0.04em;
+      @include neon-text($secondary);
+    }
+
+    p {
+      font-size: $fs-lg;
+      color: $clr-muted;
+    }
+
+    .actions {
+      margin-top: $sp-6;
+      display: flex;
+      gap: $sp-4;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+  }
+}
+
+/* Avatar circulaire animé */
+.hero-avatar {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+
+  @keyframes pulseGlow {
+    0%,
+    100% {
+      box-shadow: 0 0 18px rgba($clr-blue, 0.7), 0 0 32px rgba($clr-pink, 0.4);
+    }
+    50% {
+      box-shadow: 0 0 28px rgba($clr-pink, 0.8), 0 0 60px rgba($clr-violet, 0.5);
+    }
+  }
+
+  img {
+    width: 280px;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid rgba($clr-pink, 0.7);
+    box-shadow: $glow-pink, $glow-violet;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    animation: pulseGlow 3s infinite;
+
+    &:hover {
+      transform: scale(1.05);
+      box-shadow: $glow-blue, 0 0 40px rgba($clr-pink, 0.8);
+    }
+  }
+}
+
+/* Animation grille - défile uniquement verticalement */
+@keyframes heroGridScroll {
+  0% {
+    background-position: 0 0, 0 0;
+  }
+  100% {
+    background-position: 0 800px, 0 800px; // défile vers le bas
+  }
+}
+
+/* ======================================================================
+   BOUTONS
+   ====================================================================== */
+
+.btn {
+  @include btn-neon($secondary, $accent);
+}
+.btn--primary {
+  @include btn-neon($primary, $accent);
+}
+.btn--pink {
+  @include btn-neon($secondary, $primary);
+}
+.btn--blue {
+  @include btn-neon($accent, $secondary);
+}
+.btn--ghost {
+  @include button-base;
+  background: transparent;
+  color: $clr-white;
+  @include neon-border($accent);
+}

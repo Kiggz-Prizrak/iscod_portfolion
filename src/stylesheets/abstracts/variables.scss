@@ -1,0 +1,97 @@
+/* Couleurs de base */
+$clr-bg-deep: #070710;
+$clr-bg-night: #0a0a12;
+$clr-pink: #ff4bcd;
+$clr-violet: #6c1eff;
+$clr-blue: #00e5ff;
+$clr-sunset: #ff9e00;
+$clr-white: #eaf7ff;
+$clr-muted: #9ab3c1;
+$clr-danger: #ff3355;
+$clr-success: #35f7a6;
+$clr-warning: #ffd166;
+
+/* Couleurs complémentaires Synthwave */
+$clr-green: #00ff9f; // Vert néon principal
+$clr-mint: #35f7a6; // Vert menthe clair (déjà ton success)
+$clr-cyber: #00ffc8;
+
+/* Sémantique */
+$primary: $clr-violet;
+$secondary: $clr-pink;
+$accent: $clr-blue;
+$info: $clr-blue;
+$success: $clr-success;
+$warning: $clr-warning;
+$danger: $clr-danger;
+
+/* 3) GRADIENTS PRÊTS À L’EMPLOI */
+$grad-hero: radial-gradient(
+    120% 60% at 50% 0%,
+    rgba($clr-violet, 0.35) 0%,
+    rgba($clr-pink, 0.15) 35%,
+    rgba($clr-blue, 0.1) 60%,
+    transparent 75%
+  ),
+  linear-gradient($clr-bg-night, $clr-bg-deep);
+
+$grad-neon: linear-gradient(
+  90deg,
+  $clr-pink 0%,
+  $clr-violet 50%,
+  $clr-blue 100%
+);
+$grad-sunset: linear-gradient(135deg, $clr-pink 0%, $clr-sunset 100%);
+$grad-card: linear-gradient(
+  180deg,
+  rgba($clr-violet, 0.15),
+  rgba($clr-pink, 0.08)
+);
+
+/* 4) TYPOGRAPHIE */
+$font-heading: "Orbitron", system-ui, sans-serif;
+$font-body: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+
+/* Échelle typographique (clamp pour responsive) */
+$fs-xxl: clamp(2.6rem, 6vw, 5rem);
+$fs-xl: clamp(1.8rem, 4vw, 3rem);
+$fs-lg: clamp(1.4rem, 2.5vw, 2rem);
+$fs-md: 1rem;
+$fs-sm: 0.9rem;
+$fs-xs: 0.8rem;
+
+$lh-tight: 1.1;
+$lh-md: 1.5;
+
+/* 5) SPACING & RADII */
+$sp-0: 0;
+$sp-1: 0.25rem;
+$sp-2: 0.5rem;
+$sp-3: 0.75rem;
+$sp-4: 1rem;
+$sp-5: 1.5rem;
+$sp-6: 2rem;
+$sp-8: 3rem;
+
+$radius-sm: 0.5rem;
+$radius-md: 1rem;
+$radius-lg: 1.25rem;
+$radius-2xl: 1.75rem;
+
+/* 6) ÉLEVATIONS & GLOW */
+$shadow-soft: 0 10px 25px rgba(0, 0, 0, 0.35);
+$glow-pink: 0 0 16px rgba($clr-pink, 0.8), 0 0 40px rgba($clr-pink, 0.35);
+$glow-violet: 0 0 16px rgba($clr-violet, 0.8), 0 0 40px rgba($clr-violet, 0.35);
+$glow-blue: 0 0 16px rgba($clr-blue, 0.8), 0 0 40px rgba($clr-blue, 0.35);
+
+/* 7) BREAKPOINTS */
+$bp-sm: 480px;
+$bp-md: 768px;
+$bp-lg: 1024px;
+$bp-xl: 1280px;
+
+/* 8) Z-INDEX LAYERING */
+$z-base: 1;
+$z-header: 10;
+$z-overlay: 100;
+$z-modal: 1000;

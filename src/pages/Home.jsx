@@ -11,7 +11,9 @@ const Home = () => {
         image="/assets/profileb.jpg"
         actions={
           <>
-            <a className="btn btn--primary">Découvrir mes valeurs</a>
+            <a className="btn btn--primary" href="/about">
+              Découvrir mes valeurs
+            </a>
             <a className="btn btn--blue" href="/skills">
               Explorer mes compétences
             </a>

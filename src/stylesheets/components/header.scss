@@ -1,0 +1,312 @@
+@use "../abstracts/theme.scss" as *;
+
+/* ======================================================================
+   HEADER - NAV 
+   ====================================================================== */
+
+.c-header {
+  position: sticky;
+  top: 0;
+  z-index: $z-header;
+  background: linear-gradient(
+    180deg,
+    rgba($clr-bg-night, 0.9),
+    rgba($clr-bg-deep, 0.7)
+  );
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba($clr-violet, 0.35);
+
+  &__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: $sp-3 $sp-4;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__brand {
+    font-family: $font-heading;
+    font-size: 1.2rem;
+    @include neon-text($secondary);
+  }
+
+  /* Liens de menu */
+  &__menu {
+    position: relative;
+
+    > ul {
+      display: flex;
+      gap: 1rem;
+      list-style: none;
+    }
+
+    a,
+    button {
+      display: inline-block;
+      padding: 0.6rem 0.9rem;
+      border-radius: $radius-md;
+      color: $clr-white;
+      background: none;
+      border: none;
+      font-family: $font-heading;
+      font-size: $fs-sm;
+      cursor: pointer;
+      transition: color 0.2s, box-shadow 0.2s, background 0.2s;
+
+      &:hover {
+        color: $clr-sunset;
+        box-shadow: 0 0 6px $clr-sunset, 0 0 18px $clr-sunset;
+        background: rgba($clr-sunset, 0.08);
+      }
+      &:focus-visible {
+        @include focus-ring($accent);
+      }
+    }
+  }
+
+  /* Dropdown principal */
+  .dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 220px;
+    padding: 0.5rem 0;
+    background: rgba($clr-bg-deep, 0.95);
+    border: 1px solid $clr-pink;
+    border-radius: $radius-md;
+    box-shadow: 0 0 14px rgba($clr-pink, 0.7), 0 0 28px rgba($clr-violet, 0.4);
+    list-style: none;
+    z-index: 9999;
+
+    li {
+      padding: 0.4rem 1rem;
+
+      &:hover {
+        background: rgba($clr-pink, 0.08);
+      }
+    }
+  }
+
+  /* Sous-dropdown */
+  .dropdown__item {
+    position: relative;
+
+    &--hasSub:hover .sub-dropdown {
+      display: block;
+    }
+  }
+
+  .sub-dropdown {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    min-width: 200px;
+    margin-left: 0.2rem;
+    padding: 0.5rem 0;
+    background: rgba($clr-bg-deep, 0.95);
+    border: 1px solid $clr-blue;
+    border-radius: $radius-md;
+    box-shadow: 0 0 12px rgba($clr-blue, 0.7), 0 0 26px rgba($clr-violet, 0.4);
+    list-style: none;
+    z-index: 9999;
+
+    li {
+      padding: 0.4rem 1rem;
+
+      &:hover {
+        background: rgba($clr-blue, 0.08);
+      }
+    }
+  }
+
+  /* Affichage au hover (desktop) */
+  .c-header__menu li:hover > .dropdown {
+    display: block;
+    animation: dropdownFade 0.25s ease;
+  }
+
+  @keyframes dropdownFade {
+    from {
+      opacity: 0;
+      transform: translateY(-5px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+/* Burger button */
+.burger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: $z-header + 1;
+
+  span {
+    width: 24px;
+    height: 3px;
+    background: $clr-pink;
+    border-radius: 2px;
+    transition: transform 0.3s, opacity 0.3s, background 0.3s;
+  }
+
+  &.is-active span:nth-child(1) {
+    transform: rotate(45deg) translateY(8px);
+  }
+  &.is-active span:nth-child(2) {
+    opacity: 0;
+  }
+  &.is-active span:nth-child(3) {
+    transform: rotate(-45deg) translateY(-8px);
+  }
+}
+
+/* Navigation */
+.c-header__menu {
+  ul {
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+  }
+  li {
+    position: relative;
+  }
+
+  /* Mobile hidden by default */
+  &.is-open {
+    display: block;
+    animation: slideDown 0.4s ease;
+  }
+
+  @media (max-width: $bp-md) {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba($clr-bg-deep, 0.95);
+    border-top: 1px solid rgba($clr-violet, 0.35);
+    padding: 1rem;
+    z-index: 9999;
+
+    ul {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    a,
+    button {
+      width: 100%;
+      text-align: left;
+      color: $clr-white;
+    }
+  }
+}
+
+/* Dropdowns desktop (hover) */
+@media (min-width: $bp-md) {
+  .dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 220px;
+    padding: 0.5rem 0;
+    background: rgba($clr-bg-deep, 0.95);
+    border: 1px solid $clr-pink;
+    border-radius: $radius-md;
+    box-shadow: 0 0 14px rgba($clr-pink, 0.7), 0 0 28px rgba($clr-violet, 0.4);
+    z-index: 9999;
+  }
+  .c-header__item:hover > .dropdown {
+    display: block;
+    animation: dropdownFade 0.25s ease;
+  }
+
+  .sub-dropdown {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    min-width: 200px;
+    padding: 0.5rem 0;
+    background: rgba($clr-bg-deep, 0.95);
+    border: 1px solid $clr-blue;
+    border-radius: $radius-md;
+    box-shadow: 0 0 12px rgba($clr-blue, 0.7), 0 0 26px rgba($clr-violet, 0.4);
+    z-index: 9999;
+  }
+  .dropdown__item:hover > .sub-dropdown {
+    display: block;
+    animation: dropdownFade 0.25s ease;
+  }
+}
+
+/* Dropdowns mobile (clic) */
+@media (max-width: $bp-md) {
+  .dropdown,
+  .sub-dropdown {
+    display: none;
+    list-style: none;
+    width: 100%;
+  }
+
+  .dropdown.is-open,
+  .sub-dropdown.is-open {
+    display: block;
+    border-radius: $radius-md;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+
+    background: rgba($clr-bg-night, 0.9);
+    box-shadow: 0 0 14px rgba($clr-pink, 0.7), 0 0 28px rgba($clr-violet, 0.4);
+    animation: slideDown 0.3s ease;
+    position: absolute;
+    left: -2px;
+    top: 45px;
+  }
+
+  .dropdown__item {
+    position: static;
+  }
+
+  .sub-dropdown {
+    position: static;
+    margin-left: 0; /* plus de décalage sur le côté */
+    padding-left: 1rem;
+    background: rgba($clr-bg-deep, 0.9);
+    border: 1px solid $clr-blue;
+    box-shadow: 0 0 10px rgba($clr-blue, 0.6), 0 0 24px rgba($clr-violet, 0.4);
+  }
+
+  .burger {
+    display: flex; /* visible en mobile */
+  }
+}
+
+/* Burger caché en desktop */
+@media (min-width: $bp-md) {
+  .burger {
+    display: none;
+  }
+}
+
+/* Animations */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

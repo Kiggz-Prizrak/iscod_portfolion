@@ -8,6 +8,11 @@ const Header = () => {
   const toggleDropdown = (name) =>
     setOpenDropdown(openDropdown === name ? null : name);
 
+  const to = "nico.peignot@outlook.fr";
+  const subject = encodeURIComponent("Demande d'infos");
+  const body = encodeURIComponent("Bonjour,\n\nVoici ma demande...");
+  const href = `mailto:${to}?subject=${subject}&body=${body}`;
+
   return (
     <header className="c-header">
       <div className="c-header__inner">
@@ -27,8 +32,14 @@ const Header = () => {
         {/* Navigation */}
         <nav className={`c-header__menu ${menuOpen ? "is-open" : ""}`}>
           <ul>
+            {/* ACCUEIL */}
             <li>
               <a href="/">Accueil</a>
+            </li>
+
+            {/* ABOUT */}
+            <li>
+              <a href="/about">Presentation</a>
             </li>
 
             {/* COMPÉTENCES */}
@@ -61,22 +72,16 @@ const Header = () => {
                       <a href="/skills/react">React</a>
                     </li>
                     <li>
-                      <a href="/skills/vue">Vue</a>
+                      <a href="/skills/node">NodeJs</a>
                     </li>
                     <li>
-                      <a href="/skills/nodejs">NodeJS</a>
+                      <a href="/skills/mysql">Mysql</a>
                     </li>
                     <li>
-                      <a href="/skills/mongo">MongoDB</a>
+                      <a href="/skills/docker">Docker</a>
                     </li>
                     <li>
-                      <a href="/skills/java-android">Java Android</a>
-                    </li>
-                    <li>
-                      <a href="/skills/sql">SQL</a>
-                    </li>
-                    <li>
-                      <a href="/skills/php">PHP</a>
+                      <a href="/skills/javascript">Javascript</a>
                     </li>
                   </ul>
                 </li>
@@ -91,16 +96,29 @@ const Header = () => {
                     }`}
                   >
                     <li>
-                      <a href="/skills/gestion-projet">Gestion de projet</a>
-                    </li>
-                    <li>
-                      <a href="/skills/agilite">Agilité</a>
-                    </li>
-                    <li>
-                      <a href="/skills/relation-client">Relation client</a>
+                      <a href="/skills/vision">Vision</a>
                     </li>
                     <li>
                       <a href="/skills/communication">Communication</a>
+                    </li>
+                    <li>
+                      <a href="/skills/rigueur">Rigueur & sens du détail</a>
+                    </li>
+                    <li>
+                      <a href="/skills/autonomie">Autonomie</a>
+                    </li>
+                    <li>
+                      <a href="/skills/colaboration">Collaboration technique</a>
+                    </li>
+                    <li>
+                      <a href="/skills/gestion-projet">
+                        Gestion de projet & Méthode agile
+                      </a>
+                    </li>
+                    <li>
+                      <a href="/skills/resolution-problem">
+                        Résolution de problèmes
+                      </a>
                     </li>
                   </ul>
                 </li>
@@ -139,7 +157,9 @@ const Header = () => {
             </li>
 
             <li>
-              <a href="/contact">Contact</a>
+              <button onClick={() => (window.location.href = href)}>
+                Contact
+              </button>
             </li>
           </ul>
         </nav>
