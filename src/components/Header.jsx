@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link, NavLink } from "react-router-dom";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -8,6 +9,11 @@ const Header = () => {
   const toggleDropdown = (name) =>
     setOpenDropdown(openDropdown === name ? null : name);
 
+  const closeAll = () => {
+    setMenuOpen(false);
+    setOpenDropdown(null);
+  };
+
   const to = "nico.peignot@outlook.fr";
   const subject = encodeURIComponent("Demande d'infos");
   const body = encodeURIComponent("Bonjour,\n\nVoici ma demande...");
@@ -16,7 +22,11 @@ const Header = () => {
   return (
     <header className="c-header">
       <div className="c-header__inner">
-        <div className="c-header__brand">Nicolas Peignot</div>
+        <div className="c-header__brand">
+          <Link to="/" onClick={closeAll}>
+            Nicolas Peignot
+          </Link>
+        </div>
 
         {/* Burger button */}
         <button
@@ -32,17 +42,21 @@ const Header = () => {
         {/* Navigation */}
         <nav className={`c-header__menu ${menuOpen ? "is-open" : ""}`}>
           <ul>
-            {/* ACCUEIL */}
+            {/* HOME */}
             <li>
-              <a href="/">Accueil</a>
+              <NavLink to="/" onClick={closeAll}>
+                Accueil
+              </NavLink>
             </li>
 
             {/* ABOUT */}
             <li>
-              <a href="/about">Presentation</a>
+              <NavLink to="/about" onClick={closeAll}>
+                Présentation
+              </NavLink>
             </li>
 
-            {/* COMPÉTENCES */}
+            {/* SKILLS */}
             <li className="c-header__item c-header__item--hasDropdown">
               <button
                 className="c-header__link"
@@ -56,9 +70,12 @@ const Header = () => {
                 }`}
               >
                 <li>
-                  <a href="/skills">Toutes les compétences</a>
+                  <NavLink to="/skills" onClick={closeAll}>
+                    Toutes les compétences
+                  </NavLink>
                 </li>
 
+                {/* TECHNICAL */}
                 <li className="dropdown__item">
                   <button onClick={() => toggleDropdown("tech")}>
                     Techniques ▾
@@ -69,23 +86,34 @@ const Header = () => {
                     }`}
                   >
                     <li>
-                      <a href="/skills/react">React</a>
+                      <NavLink to="/skills/react" onClick={closeAll}>
+                        React
+                      </NavLink>
                     </li>
                     <li>
-                      <a href="/skills/node">NodeJs</a>
+                      <NavLink to="/skills/node" onClick={closeAll}>
+                        Node.js
+                      </NavLink>
                     </li>
                     <li>
-                      <a href="/skills/mysql">Mysql</a>
+                      <NavLink to="/skills/mysql" onClick={closeAll}>
+                        MySQL
+                      </NavLink>
                     </li>
                     <li>
-                      <a href="/skills/docker">Docker</a>
+                      <NavLink to="/skills/docker" onClick={closeAll}>
+                        Docker
+                      </NavLink>
                     </li>
                     <li>
-                      <a href="/skills/javascript">Javascript</a>
+                      <NavLink to="/skills/javascript" onClick={closeAll}>
+                        JavaScript
+                      </NavLink>
                     </li>
                   </ul>
                 </li>
 
+                {/* HUMAN */}
                 <li className="dropdown__item">
                   <button onClick={() => toggleDropdown("human")}>
                     Humaines ▾
@@ -96,36 +124,49 @@ const Header = () => {
                     }`}
                   >
                     <li>
-                      <a href="/skills/vision">Vision</a>
+                      <NavLink to="/skills/vision" onClick={closeAll}>
+                        Vision
+                      </NavLink>
                     </li>
                     <li>
-                      <a href="/skills/communication">Communication</a>
+                      <NavLink to="/skills/communication" onClick={closeAll}>
+                        Communication
+                      </NavLink>
                     </li>
                     <li>
-                      <a href="/skills/rigueur">Rigueur & sens du détail</a>
+                      <NavLink to="/skills/rigueur" onClick={closeAll}>
+                        Rigueur & sens du détail
+                      </NavLink>
                     </li>
                     <li>
-                      <a href="/skills/autonomie">Autonomie</a>
+                      <NavLink to="/skills/autonomie" onClick={closeAll}>
+                        Autonomie
+                      </NavLink>
                     </li>
                     <li>
-                      <a href="/skills/colaboration">Collaboration technique</a>
+                      <NavLink to="/skills/collaboration" onClick={closeAll}>
+                        Collaboration technique
+                      </NavLink>
                     </li>
                     <li>
-                      <a href="/skills/gestion-projet">
+                      <NavLink to="/skills/gestion-projet" onClick={closeAll}>
                         Gestion de projet & Méthode agile
-                      </a>
+                      </NavLink>
                     </li>
                     <li>
-                      <a href="/skills/resolution-problem">
+                      <NavLink
+                        to="/skills/resolution-problem"
+                        onClick={closeAll}
+                      >
                         Résolution de problèmes
-                      </a>
+                      </NavLink>
                     </li>
                   </ul>
                 </li>
               </ul>
             </li>
 
-            {/* PROJETS */}
+            {/* PROJECTS */}
             <li className="c-header__item c-header__item--hasDropdown">
               <button
                 className="c-header__link"
@@ -139,25 +180,46 @@ const Header = () => {
                 }`}
               >
                 <li>
-                  <a href="/project/groupomania">Groupomania</a>
+                  <NavLink to="/projects" onClick={closeAll}>
+                    Tous mes projets
+                  </NavLink>
                 </li>
                 <li>
-                  <a href="/project/lft">Large Field Theater</a>
+                  <NavLink to="/projects/groupomania" onClick={closeAll}>
+                    Groupomania
+                  </NavLink>
                 </li>
                 <li>
-                  <a href="/project/lyseo">Lyseo</a>
+                  <NavLink to="/projects/lft" onClick={closeAll}>
+                    Large Field Theater
+                  </NavLink>
                 </li>
                 <li>
-                  <a href="/project/kanban">Kanban Web App</a>
+                  <NavLink to="/projects/lyseo" onClick={closeAll}>
+                    Lyseo
+                  </NavLink>
                 </li>
                 <li>
-                  <a href="/project/pmt">Project Management Tool</a>
+                  <NavLink to="/projects/kanban" onClick={closeAll}>
+                    Kanban Web App
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/projects/pmt" onClick={closeAll}>
+                    Project Management Tool
+                  </NavLink>
                 </li>
               </ul>
             </li>
 
+            {/* CONTACT */}
             <li>
-              <button onClick={() => (window.location.href = href)}>
+              <button
+                onClick={() => {
+                  window.location.href = href;
+                  closeAll();
+                }}
+              >
                 Contact
               </button>
             </li>

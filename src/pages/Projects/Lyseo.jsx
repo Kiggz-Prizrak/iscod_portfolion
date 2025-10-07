@@ -10,49 +10,20 @@ import {
   faGit,
   faGithub,
   faLinkedin,
-  faDev,
-  faStackOverflow,
-  faOpenai,
 } from "@fortawesome/free-brands-svg-icons";
-import { faHtml5, faCss3Alt } from "@fortawesome/free-brands-svg-icons";
 const Lyseo = () => {
-  const icons = [faJs, faReact, faNodeJs, faRust, faHtml5, faCss3Alt];
-  const gradients = [
-    "linear-gradient(135deg, #ff00ff, #00ffff)",
-    "linear-gradient(90deg, #ffcc00, #ff00ff)",
-    "linear-gradient(120deg, #00ffff, #ff007f)",
-    "linear-gradient(45deg, #00ff9f, #7d00ff)",
-    "linear-gradient(60deg, #ff007f, #00aaff)",
-    "linear-gradient(100deg, #ff00aa, #00ffff)",
-  ];
   return (
     <main className="bg-nebula bg-stars ">
       <ProjectBanner title="Lyseo" subtitle="Rust – Performance & Sécurité" />
 
       <div className="project ">
-        <div className="futures__block bg-grid">
+        <div className="project__tech-banner">
           <FontAwesomeIcon icon={faRust} className="fa-circle-bg fa-glitch" />
           <FontAwesomeIcon icon={faDocker} className="fa-circle-bg fa-glitch" />
           <FontAwesomeIcon icon={faGit} className="fa-circle-bg fa-glitch" />
-          <FontAwesomeIcon icon={faGithub} className="fa-circle-bg fa-glitch" />
           <FontAwesomeIcon
             icon={faLinkedin}
             className="fa-circle-bg fa-glitch"
-          />
-          <FontAwesomeIcon icon={faLinux} className="fa-circle-bg fa-glitch" />
-        </div>
-        <div style={{ display: "flex", gap: "2rem", fontSize: "4rem" }}>
-          <FontAwesomeIcon icon={faJs} className="fa-neon" size="4px" />
-          <FontAwesomeIcon icon={faReact} className="fa-gradient" size="4px" />
-          <FontAwesomeIcon icon={faNodeJs} className="fa-circle" size="4px" />
-          <FontAwesomeIcon icon={faJs} className="fa-glitch " size="4px" />
-          <FontAwesomeIcon icon={faReact} className="fa-gradient" />
-          <FontAwesomeIcon icon={faRust} className="fa-gradient" />
-
-          <FontAwesomeIcon
-            icon={faNodeJs}
-            className="fa-circle-bg fa-glitch"
-            size="4px"
           />
         </div>
         <section className="project__meta">

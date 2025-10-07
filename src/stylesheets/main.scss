@@ -9,7 +9,9 @@
 @use "components/timeline.scss";
 @use "components/footer.scss";
 
-
 @use "layout/body";
+
+@use "pages/projects.scss";
+@use "pages/skills.scss";
 
 @use "./abstracts/theme.scss" as *;

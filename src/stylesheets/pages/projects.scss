@@ -1,0 +1,214 @@
+@use "../abstracts/theme.scss" as *;
+
+/* --- HEADER --- */
+.projects__header {
+  text-align: center;
+  padding: clamp(7rem, 8vw, 7rem);
+  background: linear-gradient(
+    180deg,
+    rgba($clr-violet, 0.4) 0%,
+    rgba($clr-bg-deep, 0.95) 100%
+  );
+  border-bottom: 1px solid rgba($clr-violet, 0.3);
+  box-shadow: 0 0 60px rgba($clr-violet, 0.25);
+
+  .projects__title {
+    font-family: $font-heading;
+    font-size: clamp(2.4rem, 6vw, 4rem);
+    @include neon-text($clr-pink);
+    margin-bottom: 1rem;
+  }
+
+  .projects__tagline {
+    color: $clr-muted;
+    font-size: 1.15rem;
+    line-height: 1.6;
+    max-width: 850px;
+    margin: 0 auto;
+    strong {
+      color: $clr-sunset;
+      text-shadow: 0 0 10px rgba($clr-sunset, 0.8);
+    }
+  }
+}
+
+/* --- LISTE DE CARTES --- */
+.projects__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+  margin: auto;
+  gap: 2.8rem;
+  max-width: 1200px;
+  padding:  2rem;
+}
+
+/* --- CARTE INDIVIDUELLE --- */
+.project__card {
+  position: relative;
+  z-index: 0;
+
+  background: rgba($clr-bg-night, 0.75);
+  border-radius: 1.2rem;
+  padding: 2.2rem 1.8rem;
+  border: 1px solid rgba($clr-violet, 0.25);
+  box-shadow: inset 0 0 20px rgba($clr-violet, 0.2),
+    0 0 20px rgba($clr-blue, 0.1);
+  transition: all 0.4s ease;
+  overflow: hidden;
+  backdrop-filter: blur(6px);
+
+  a {
+    position: relative;
+    z-index: 2; // au-dessus de l’effet holographique
+  }
+
+  /* effet holographique de survol */
+  &::before {
+    content: "";
+    z-index: 1;
+    pointer-events: none;
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      120deg,
+      rgba($clr-blue, 0.2),
+      rgba($clr-pink, 0.2),
+      rgba($clr-violet, 0.15)
+    );
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+
+  &:hover {
+    transform: translateY(-10px);
+    border-color: rgba($clr-pink, 0.6);
+    box-shadow: 0 0 20px rgba($clr-pink, 0.4), 0 0 60px rgba($clr-blue, 0.2);
+  }
+
+  &:hover::before {
+    opacity: 1;
+    animation: holoShift 3s linear infinite;
+  }
+
+  /* --- HEADER --- */
+  .project__card-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.4rem;
+
+    .project__icon {
+      font-size: 2.2rem;
+      color: $clr-pink;
+      filter: drop-shadow(0 0 6px rgba($clr-pink, 0.7));
+      transition: color 0.3s ease, filter 0.3s ease;
+
+      &:hover {
+        color: $clr-blue;
+        filter: drop-shadow(0 0 10px rgba($clr-blue, 0.8));
+      }
+    }
+
+    h2 {
+      font-family: $font-heading;
+      font-size: 1.4rem;
+      margin: 0;
+
+      .project__title-link {
+        color: $clr-white;
+        text-decoration: none;
+        transition: 0.3s ease;
+        &:hover {
+          color: $clr-sunset;
+          text-shadow: 0 0 10px rgba($clr-sunset, 0.7);
+        }
+      }
+    }
+  }
+
+  /* --- DESCRIPTION --- */
+  .project__description {
+    font-size: 0.95rem;
+    color: $clr-muted;
+    line-height: 1.6;
+    margin-bottom: 1.6rem;
+  }
+
+  /* --- SKILLS TAGS --- */
+  .project__skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-bottom: 1.3rem;
+  }
+
+  .project__skill-tag {
+    background: linear-gradient(90deg, $clr-blue, $clr-pink);
+    background-size: 300%;
+    color: $clr-white;
+    font-size: 0.82rem;
+    font-weight: 500;
+    padding: 0.4rem 0.9rem;
+    border-radius: 999px;
+    text-decoration: none;
+    text-shadow: 0 0 6px rgba($clr-blue, 0.5);
+    transition: all 0.3s ease;
+    animation: neonFlow 5s linear infinite;
+
+    &:hover {
+      background-position: 100% 0;
+      box-shadow: 0 0 15px rgba($clr-pink, 0.4),
+        inset 0 0 25px rgba($clr-blue, 0.4);
+      transform: scale(1.07);
+    }
+  }
+
+  /* --- LIEN FINAL --- */
+  .project__link {
+    text-align: right;
+    .neon-link {
+      font-weight: 600;
+      color: $clr-blue;
+      text-decoration: none;
+      text-shadow: 0 0 10px rgba($clr-blue, 0.6);
+      transition: all 0.3s ease;
+
+      &:hover {
+        color: $clr-pink;
+        text-shadow: 0 0 14px rgba($clr-pink, 0.8);
+      }
+    }
+  }
+}
+
+/* --- ANIMATIONS --- */
+@keyframes neonFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes holoShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+  .projects__list {
+    grid-template-columns: 1fr;
+  }
+}

@@ -8,6 +8,11 @@ import { faEnvelope, faCode } from "@fortawesome/free-solid-svg-icons";
 import React from "react";
 
 const Footer = () => {
+  const to = "nico.peignot@outlook.fr";
+  const subject = encodeURIComponent("Demande d'infos");
+  const body = encodeURIComponent("Bonjour,\n\nVoici ma demande...");
+  const href = `mailto:${to}?subject=${subject}&body=${body}`;
+
   return (
     <footer className="footer bg-grid">
       <div className="footer__content">
@@ -39,7 +44,7 @@ const Footer = () => {
               <a href="/about">Vision</a>
             </li>
             <li>
-              <a href="/contact">Contact</a>
+              <a href={(window.location.href = href)}>Contact</a>
             </li>
           </ul>
         </nav>

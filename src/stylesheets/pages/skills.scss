@@ -1,0 +1,229 @@
+@use "../abstracts/theme.scss" as *;
+
+/* === HEADER PRINCIPAL === */
+.skills__header {
+  text-align: center;
+  padding: clamp(6rem, 10vw, 8rem) 2rem 3rem;
+  background: linear-gradient(
+    180deg,
+    rgba($clr-violet, 0.5) 0%,
+    rgba($clr-bg-deep, 0.9) 100%
+  );
+  border-bottom: 1px solid rgba($clr-violet, 0.3);
+  box-shadow: 0 0 60px rgba($clr-violet, 0.25);
+
+  .skills__title {
+    font-family: $font-heading;
+    font-size: clamp(2.4rem, 6vw, 4rem);
+    @include neon-text($clr-pink);
+    margin-bottom: 1rem;
+  }
+
+  .skills__tagline {
+    color: $clr-muted;
+    font-size: 1.15rem;
+    max-width: 900px;
+    margin: 0 auto;
+    line-height: 1.6;
+
+    strong {
+      color: $clr-sunset;
+      text-shadow: 0 0 8px rgba($clr-sunset, 0.8);
+    }
+  }
+}
+
+/* === SECTIONS === */
+.skills__section {
+  padding: 4rem 2rem;
+  text-align: center;
+
+  &:nth-child(odd) {
+    background: rgba($clr-bg-night, 0.5);
+  }
+
+  .skills__subtitle {
+    font-family: $font-heading;
+    font-size: 2rem;
+    margin-bottom: 2.5rem;
+    position: relative;
+    display: inline-block;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 100px;
+      height: 3px;
+      margin: 0.8rem auto 0;
+      background: linear-gradient(90deg, $clr-blue, $clr-pink, $clr-sunset);
+      box-shadow: 0 0 16px rgba($clr-blue, 0.8);
+      animation: pulseBar 3s infinite ease-in-out;
+    }
+  }
+}
+
+/* === GRILLE DE COMPÉTENCES === */
+.skills__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* === CARTE DE COMPÉTENCE === */
+.skill__card {
+  position: relative;
+  padding: 2rem 1.5rem;
+  border-radius: 1.2rem;
+  background: rgba($clr-bg-deep, 0.7);
+  border: 1px solid rgba($clr-violet, 0.3);
+  box-shadow: inset 0 0 20px rgba($clr-violet, 0.2), 0 0 30px rgba($clr-blue, 0.1);
+  overflow: hidden;
+  transition: all 0.4s ease;
+  backdrop-filter: blur(6px);
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      120deg,
+      rgba($clr-blue, 0.15),
+      rgba($clr-pink, 0.15),
+      rgba($clr-sunset, 0.1)
+    );
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+  }
+
+  &:hover {
+    transform: translateY(-10px);
+    border-color: rgba($clr-pink, 0.6);
+    box-shadow: 0 0 25px rgba($clr-pink, 0.4), 0 0 60px rgba($clr-blue, 0.2);
+  }
+
+  &:hover::before {
+    opacity: 1;
+    animation: holoShift 3s linear infinite;
+  }
+}
+
+/* === CONTENU DES CARTES === */
+.skill__main-link {
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  color: $clr-white;
+  position: relative;
+  z-index: 2;
+
+  .skill__icon {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+    color: $clr-pink;
+    filter: drop-shadow(0 0 10px rgba($clr-pink, 0.8));
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+
+  &:hover .skill__icon {
+    color: $clr-blue;
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 12px rgba($clr-blue, 0.9));
+  }
+
+  .skill__title {
+    font-family: $font-heading;
+    font-size: 1.4rem;
+    margin-bottom: 0.6rem;
+    color: $clr-white;
+  }
+
+  .skill__desc {
+    color: $clr-muted;
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+}
+
+/* === PROJETS ASSOCIÉS === */
+.skill__projects {
+  margin-top: 1.6rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  justify-content: center;
+}
+
+.skill__project-btn {
+  font-size: 0.85rem;
+  color: $clr-white;
+  text-decoration: none;
+  background: linear-gradient(90deg, $clr-blue, $clr-pink);
+  padding: 0.45rem 1rem;
+  border-radius: 999px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  text-shadow: 0 0 6px rgba($clr-blue, 0.5);
+  background-size: 300%;
+  animation: neonFlow 5s linear infinite;
+
+  &:hover {
+    background-position: 100% 0;
+    box-shadow: 0 0 15px rgba($clr-pink, 0.5),
+      inset 0 0 25px rgba($clr-blue, 0.4);
+    transform: scale(1.08);
+  }
+}
+
+/* === ANIMATIONS === */
+@keyframes pulseBar {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scaleX(0.95);
+  }
+  50% {
+    opacity: 1;
+    transform: scaleX(1.1);
+  }
+}
+
+@keyframes neonFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes holoShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .skills__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .skill__card {
+    padding: 1.8rem 1.2rem;
+  }
+
+  .skill__main-link .skill__icon {
+    font-size: 2.4rem;
+  }
+}

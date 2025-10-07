@@ -1,30 +1,33 @@
-import { createBrowserRouter, Navigate, useLoaderData } from "react-router-dom";
+import { createBrowserRouter } from "react-router-dom";
 
 import Root from "./Root";
-
 import ErrorPage from "../pages/ErrorPage";
-import Skills from "../pages/skills";
+import Home from "../pages/Home";
+import Presentation from "../pages/Presentation";
 import Projects from "../pages/Projects";
 import Contact from "../pages/Contact";
-import Home from "../pages/Home";
-import Lyseo from "../pages/Project/Lyseo";
-import KanbanWebApp from "../pages/Project/KanbanWebApp";
-import Groupomania from "../pages/Project/Groupomania";
-import Pmt from "../pages/Project/Pmt";
-import Lft from "../pages/Project/Lft";
-import Presentation from "../pages/Presentation";
-import ReactSkill from "../pages/Skill/React";
-import NodeSkill from "../pages/Skill/Node";
-import DockerSkill from "../pages/Skill/Docker";
-import MysqlSkill from "../pages/Skill/Mysql";
-import JavascriptSkill from "../pages/Skill/javascript";
-import VisionSkill from "../pages/Skill/Vision";
-import CommunicationSkill from "../pages/Skill/Communication";
-import RigueurSkill from "../pages/Skill/Rigeur";
-import AutonomieSkill from "../pages/Skill/Autonomie";
-import CollaborationSkill from "../pages/Skill/Colaboration";
-import GestionProjetSkill from "../pages/Skill/GestionProjet";
-import ResolutionProblemesSkill from "../pages/Skill/ResolutionProblem";
+import Skills from "../pages/Skills";
+
+// ---- Projects ----
+import Lyseo from "../pages/Projects/Lyseo";
+import KanbanWebApp from "../pages/Projects/KanbanWebApp";
+import Groupomania from "../pages/Projects/Groupomania";
+import Pmt from "../pages/Projects/Pmt";
+import Lft from "../pages/Projects/Lft";
+
+// ---- Skills ----
+import ReactSkill from "../pages/Skills/React";
+import NodeSkill from "../pages/Skills/Node";
+import DockerSkill from "../pages/Skills/Docker";
+import MysqlSkill from "../pages/Skills/Mysql";
+import JavascriptSkill from "../pages/Skills/Javascript";
+import VisionSkill from "../pages/Skills/Vision";
+import CommunicationSkill from "../pages/Skills/Communication";
+import RigueurSkill from "../pages/Skills/Rigueur";
+import AutonomieSkill from "../pages/Skills/Autonomie";
+import CollaborationSkill from "../pages/Skills/Collaboration";
+import GestionProjetSkill from "../pages/Skills/GestionProjet";
+import ResolutionProblemesSkill from "../pages/Skills/ResolutionProblemes";
 
 const router = createBrowserRouter([
   {
@@ -32,93 +35,41 @@ const router = createBrowserRouter([
     element: <Root />,
     errorElement: <ErrorPage />,
     children: [
+      { index: true, element: <Home /> },
+      { path: "about", element: <Presentation /> },
+      { path: "contact", element: <Contact /> },
+
+      // ---- Projects ----
       {
-        path: "/",
-        element: <Home />,
+        path: "projects",
+        children: [
+          { index: true, element: <Projects /> },
+          { path: "lyseo", element: <Lyseo /> },
+          { path: "kanban", element: <KanbanWebApp /> },
+          { path: "pmt", element: <Pmt /> },
+          { path: "lft", element: <Lft /> },
+          { path: "groupomania", element: <Groupomania /> },
+        ],
       },
+
+      // ---- Skills ----
       {
-        path: "/about",
-        element: <Presentation />,
-      },
-      {
-        path: "/project/lyseo",
-        element: <Lyseo />,
-      },
-      {
-        path: "/project/kanban",
-        element: <KanbanWebApp />,
-      },
-      {
-        path: "/project/pmt",
-        element: <Pmt />,
-      },
-      {
-        path: "/project/lft",
-        element: <Lft />,
-      },
-      {
-        path: "/project/groupomania",
-        element: <Groupomania />,
-      },
-      {
-        path: "/skills",
-        element: <Skills />,
-      },
-      {
-        path: "/skills/react",
-        element: <ReactSkill />,
-      },
-      {
-        path: "/skills/node",
-        element: <NodeSkill />,
-      },
-      {
-        path: "/skills/docker",
-        element: <DockerSkill />,
-      },
-      {
-        path: "/skills/mysql",
-        element: <MysqlSkill />,
-      },
-      {
-        path: "/skills/javascript",
-        element: <JavascriptSkill />,
-      },
-      {
-        path: "/skills/vision",
-        element: <VisionSkill />,
-      },
-      {
-        path: "/skills/communication",
-        element: <CommunicationSkill />,
-      },
-      {
-        path: "/skills/rigueur",
-        element: <RigueurSkill />,
-      },
-      {
-        path: "/skills/autonomie",
-        element: <AutonomieSkill />,
-      },
-      {
-        path: "/skills/colaboration",
-        element: <CollaborationSkill />,
-      },
-      {
-        path: "/skills/gestion-projet",
-        element: <GestionProjetSkill />,
-      },
-      {
-        path: "/skills/resolution-problem",
-        element: <ResolutionProblemesSkill />,
-      },
-      {
-        path: "/projects",
-        element: <Projects />,
-      },
-      {
-        path: "/contact",
-        element: <Contact />,
+        path: "skills",
+        children: [
+          { index: true, element: <Skills /> },
+          { path: "react", element: <ReactSkill /> },
+          { path: "node", element: <NodeSkill /> },
+          { path: "docker", element: <DockerSkill /> },
+          { path: "mysql", element: <MysqlSkill /> },
+          { path: "javascript", element: <JavascriptSkill /> },
+          { path: "vision", element: <VisionSkill /> },
+          { path: "communication", element: <CommunicationSkill /> },
+          { path: "rigueur", element: <RigueurSkill /> },
+          { path: "autonomie", element: <AutonomieSkill /> },
+          { path: "collaboration", element: <CollaborationSkill /> },
+          { path: "gestion-projet", element: <GestionProjetSkill /> },
+          { path: "resolution-problem", element: <ResolutionProblemesSkill /> },
+        ],
       },
     ],
   },

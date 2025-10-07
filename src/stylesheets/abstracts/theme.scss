@@ -655,6 +655,64 @@ img {
   position: relative;
   z-index: 1;
 
+  &__list__large {
+    display: flex;
+    flex-direction: column;
+    gap: 1.4rem;
+    margin-top: 2rem;
+    padding: 0;
+    list-style: none;
+
+    li {
+      background: rgba($clr-bg-deep, 0.9);
+      border: 1px solid rgba($clr-violet, 0.35);
+      border-radius: $radius-lg;
+      padding: 1rem 1.5rem;
+      box-shadow: 0 0 16px rgba($clr-violet, 0.25),
+        inset 0 0 20px rgba($clr-blue, 0.15);
+      color: $clr-white;
+      font-size: 1rem;
+      text-align: left;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      gap: 0.6rem;
+      line-height: 1.6;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+
+      &:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 0 22px rgba($clr-violet, 0.6),
+          inset 0 0 28px rgba($clr-blue, 0.25);
+        color: $clr-sunset;
+      }
+
+      strong {
+        color: $clr-sunset;
+        text-shadow: 0 0 6px rgba($clr-sunset, 0.9);
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        background: radial-gradient(
+          circle at 30% 120%,
+          rgba($clr-blue, 0.15),
+          transparent 70%
+        );
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        z-index: -1;
+      }
+
+      &:hover::before {
+        opacity: 1;
+      }
+    }
+  }
+
   &__list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -1672,7 +1730,6 @@ $radius-2xl: 32px;
   }
 }
 
-
 .skill__cards {
   display: flex;
   flex-wrap: wrap;
@@ -1694,12 +1751,14 @@ $radius-2xl: 32px;
   border-radius: 1rem;
   text-decoration: none;
   color: $clr-white;
-  background: linear-gradient(145deg, rgba($clr-bg-night, 0.9), rgba($clr-bg-deep, 0.9));
+  background: linear-gradient(
+    145deg,
+    rgba($clr-bg-night, 0.9),
+    rgba($clr-bg-deep, 0.9)
+  );
   border: 1px solid rgba($clr-pink, 0.2);
-  box-shadow:
-    0 0 10px rgba($clr-pink, 0.25),
-    inset 0 0 25px rgba($clr-violet, 0.25),
-    0 0 40px rgba($clr-blue, 0.05);
+  box-shadow: 0 0 10px rgba($clr-pink, 0.25),
+    inset 0 0 25px rgba($clr-violet, 0.25), 0 0 40px rgba($clr-blue, 0.05);
   transform: rotateX(0deg) translateY(0);
   transition: all 0.35s ease;
   position: relative;
@@ -1707,17 +1766,14 @@ $radius-2xl: 32px;
 
   &:hover {
     border-color: rgba($clr-pink, 0.5);
-    box-shadow:
-      0 0 18px rgba($clr-pink, 0.6),
-      inset 0 0 30px rgba($clr-blue, 0.3),
-      0 0 60px rgba($clr-violet, 0.25);
+    box-shadow: 0 0 18px rgba($clr-pink, 0.6),
+      inset 0 0 30px rgba($clr-blue, 0.3), 0 0 60px rgba($clr-violet, 0.25);
     transform: translateY(-8px) scale(1.03);
   }
 
   &:active {
     transform: translateY(0) scale(0.97);
-    box-shadow:
-      0 0 8px rgba($clr-pink, 0.3),
+    box-shadow: 0 0 8px rgba($clr-pink, 0.3),
       inset 0 0 20px rgba($clr-blue, 0.2);
   }
 

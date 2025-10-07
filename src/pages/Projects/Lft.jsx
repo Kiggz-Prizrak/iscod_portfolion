@@ -1005,73 +1005,74 @@ const Lft = () => {
             Compétences associées
           </h2>
 
-          <ul className="skills__list">
+          <ul className="skills__list__large">
             <li>
-              ⚛️ <strong>Développement front-end avec React</strong> — création
+              <strong>⚛️ Développement front-end avec React</strong> — création
               d’une interface modulaire et réactive intégrant un tableau de bord
               temps réel, des fenêtres dynamiques (RC Dock), des modals et une
               carte interactive.
             </li>
 
             <li>
-              🔄 <strong>Gestion d’état avancée avec Redux</strong> —
+              <strong> 🔄 Gestion d’état avancée avec Redux</strong> —
               synchronisation des données issues du backend et des WebSockets,
               mise à jour des devices, sessions et notifications sans requêtes
               HTTP supplémentaires.
             </li>
 
             <li>
-              🌐 <strong>Communication en temps réel via Socket.IO</strong> —
+              <strong>🌐 Communication en temps réel via Socket.IO</strong> —
               intégration complète du protocole WebSocket pour la remontée des
               informations des casques VR, des Device Managers et des serveurs
             </li>
 
             <li>
-              🧠 <strong>Architecture full stack Node.js / React</strong> —
+              <strong>🧠 Architecture full stack Node.js / React</strong> —
               gestion fluide entre le backend REST et la communication temps
               réel, en limitant les appels redondants et optimisant la
               performance mémoire.
             </li>
 
             <li>
-              🧩 <strong>Interopérabilité entre services</strong> — coordination
-              entre le backend Node.js, les serveurs en C#, et les casques
-              Android connectés via ADB, avec une structure réseau centralisée.
+              <strong> 🧩 Interopérabilité entre services</strong> —
+              coordination entre le backend Node.js, les serveurs en C#, et les
+              casques Android connectés via ADB, avec une structure réseau
+              centralisée.
             </li>
 
             <li>
-              ⚙️ <strong>Gestion de configuration et automatisation</strong> —
+              <strong>⚙️ Gestion de configuration et automatisation</strong> —
               containerisation du backend, des serveurs et de la base de données
               via <strong>Docker</strong>, simplifiant la maintenance et les
               déploiements.
             </li>
 
             <li>
-              📡 <strong>Traitement de données temps réel</strong> — conception
+              <strong>📡 Traitement de données temps réel</strong> — conception
               d’un flux stable pour gérer les positions, niveaux de batterie et
               statuts des casques sans surcharge réseau.
             </li>
 
             <li>
-              🧭 <strong>Développement de carte interactive</strong> —
+              <strong>🧭 Développement de carte interactive</strong> —
               visualisation en direct du déplacement des casques VR sur une
               carte, synchronisée avec les sessions et les groupes actifs.
             </li>
 
             <li>
-              🔒 <strong>Rigueur et fiabilité</strong> — implémentation de
+              <strong>🔒 Rigueur et fiabilité</strong> — implémentation de
               vérifications backend, gestion d’erreurs WebSocket et logs
               complets pour le suivi système.
             </li>
 
             <li>
-              👥 <strong>Collaboration agile</strong> — planification en
-              sprints, réunions de suivi, gestion du turnover et documentation
-              claire pour assurer la continuité du projet.
+              <strong>👥 Collaboration agile</strong> — planification en sprints,
+              réunions de suivi, gestion du turnover et documentation claire
+              pour assurer la continuité du projet.
             </li>
 
             <li>
-              🚀 <strong>Autonomie et méthodologie</strong> — travail en
+              <strong> 🚀 Autonomie et méthodologie</strong> — travail en
               autonomie sur le front, intégration du backend et réflexion
               d’optimisation continue des flux réseau et des performances
               globales.
@@ -1083,6 +1084,8 @@ const Lft = () => {
             style={{
               display: "flex",
               alignItems: "center",
+              flexWrap:"wrap",
+              gap: "2em",
               justifyContent: "space-around",
               marginTop: "2rem",
             }}
