@@ -11,6 +11,8 @@ import {
   faGithub,
   faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
+import { Link } from "react-router-dom";
+
 const Lyseo = () => {
   return (
     <main className="bg-nebula bg-stars ">

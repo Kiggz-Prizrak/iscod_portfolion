@@ -19,6 +19,7 @@ import {
   faWifi,
   faC,
 } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 const Lft = () => {
   return (
@@ -1066,9 +1067,9 @@ const Lft = () => {
             </li>
 
             <li>
-              <strong>👥 Collaboration agile</strong> — planification en sprints,
-              réunions de suivi, gestion du turnover et documentation claire
-              pour assurer la continuité du projet.
+              <strong>👥 Collaboration agile</strong> — planification en
+              sprints, réunions de suivi, gestion du turnover et documentation
+              claire pour assurer la continuité du projet.
             </li>
 
             <li>
@@ -1084,7 +1085,7 @@ const Lft = () => {
             style={{
               display: "flex",
               alignItems: "center",
-              flexWrap:"wrap",
+              flexWrap: "wrap",
               gap: "2em",
               justifyContent: "space-around",
               marginTop: "2rem",

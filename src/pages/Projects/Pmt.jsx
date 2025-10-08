@@ -8,6 +8,7 @@ import { faDatabase } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import ProjectBanner from "../../components/ProjectBanner";
+import { Link } from "react-router-dom";
 
 const Pmt = () => {
   return (

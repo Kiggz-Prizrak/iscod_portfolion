@@ -11,6 +11,7 @@ import {
   faReact,
 } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link } from "react-router-dom";
 
 const KanbanWebApp = () => {
   return (
@@ -206,16 +207,14 @@ const KanbanWebApp = () => {
               <h3>Définition du besoin</h3>
               <ul>
                 <li>
-                   Identifier les fonctionnalités clés d’un outil Kanban
-                  moderne.
+                  Identifier les fonctionnalités clés d’un outil Kanban moderne.
                 </li>
                 <li>
-                   Concevoir une solution <strong>autonome</strong>, sans
+                  Concevoir une solution <strong>autonome</strong>, sans
                   backend, avec sauvegarde locale.
                 </li>
                 <li>
-                   Déterminer une structure de données adaptée à React et
-                  Redux.
+                  Déterminer une structure de données adaptée à React et Redux.
                 </li>
               </ul>
             </div>
@@ -248,15 +247,15 @@ const KanbanWebApp = () => {
               <h3>Conception de l’interface utilisateur</h3>
               <ul>
                 <li>
-                   Utilisation de <strong>Sass</strong> pour une mise en page
+                  Utilisation de <strong>Sass</strong> pour une mise en page
                   claire et modulable.
                 </li>
                 <li>
-                   Création d’un <strong>dark mode</strong> et d’un{" "}
+                  Création d’un <strong>dark mode</strong> et d’un{" "}
                   <strong>light mode</strong> intégrés.
                 </li>
                 <li>
-                   Travail sur l’ergonomie, les transitions et la lisibilité.
+                  Travail sur l’ergonomie, les transitions et la lisibilité.
                 </li>
               </ul>
             </div>
@@ -325,24 +324,23 @@ const KanbanWebApp = () => {
             </p>
             <ul>
               <li>
-                 Consolidation de mes compétences en <strong>React</strong> et{" "}
+                Consolidation de mes compétences en <strong>React</strong> et{" "}
                 <strong>Redux</strong>
               </li>
               <li>
-                 Mise en œuvre d’un système complet de{" "}
+                Mise en œuvre d’un système complet de{" "}
                 <strong>drag & drop</strong>
               </li>
               <li>
-                 Maîtrise de la <strong>persistance locale</strong> avec Redux
+                Maîtrise de la <strong>persistance locale</strong> avec Redux
                 Persist
               </li>
               <li>
-                 Conception d’un design clair, responsive et agréable à
-                utiliser
+                Conception d’un design clair, responsive et agréable à utiliser
               </li>
               <li>
-                 Approfondissement de la rigueur dans la structure du code et
-                la modularité
+                Approfondissement de la rigueur dans la structure du code et la
+                modularité
               </li>
             </ul>
             <p>

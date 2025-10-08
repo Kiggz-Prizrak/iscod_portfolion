@@ -30,19 +30,19 @@ const Footer = () => {
           <h3 className="neon-blue">Navigation</h3>
           <ul>
             <li>
-              <Link href="/">Accueil</Link>
+              <Link to="/">Accueil</Link>
             </li>
             <li>
-              <Link href="/projects">Projets</Link>
+              <Link to="/projects">Projets</Link>
             </li>
             <li>
-              <Link href="/skills">Compétences</Link>
+              <Link to="/skills">Compétences</Link>
             </li>
             <li>
-              <Link href="/about">Vision</Link>
+              <Link to="/about">Vision</Link>
             </li>
             <li>
-              <Link href={href}>Contact</Link>
+              <Link to={href}>Contact</Link>
             </li>
           </ul>
         </nav>
@@ -58,7 +58,7 @@ const Footer = () => {
             </li>
             <li>
               <Link
-                href="https://github.com/Kiggz-Prizrak"
+                to="https://github.com/Kiggz-Prizrak"
                 target="_blank"
                 rel="noopener noreferrer"
               >
