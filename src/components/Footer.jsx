@@ -42,7 +42,13 @@ const Footer = () => {
               <Link to="/about">Vision</Link>
             </li>
             <li>
-              <Link to={href}>Contact</Link>
+              <button
+                onClick={() => {
+                  window.location.href = href;
+                }}
+              >
+                Contact
+              </button>
             </li>
           </ul>
         </nav>
@@ -52,10 +58,15 @@ const Footer = () => {
           <h3 className="neon-pink">Réseaux & Contact</h3>
           <ul>
             <li>
-              <Link href="mailto:nico.peignot@outlook.fr">
+              <button
+                onClick={() => {
+                  window.location.href = href;
+                }}
+              >
                 <FontAwesomeIcon icon={faEnvelope} /> nico.peignot@outlook.fr
-              </Link>
+              </button>
             </li>
+
             <li>
               <Link
                 to="https://github.com/Kiggz-Prizrak"
@@ -67,7 +78,7 @@ const Footer = () => {
             </li>
             <li>
               <Link
-                href="https://www.linkedin.com/in/nicolas-peignot-050796170"
+                to="https://www.linkedin.com/in/nicolas-peignot-050796170"
                 target="_blank"
                 rel="noopener noreferrer"
               >
