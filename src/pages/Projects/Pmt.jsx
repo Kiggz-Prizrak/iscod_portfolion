@@ -522,7 +522,7 @@ const Pmt = () => {
             <h3>Évolutions possibles</h3>
             <ul>
               <li>
-                ✦ <strong>Gestion avancée des tâches</strong> : ajout de
+                <strong>Gestion avancée des tâches</strong> : ajout de
                 sous-tâches, échéances et notifications automatiques.
               </li>
               <li>
@@ -639,7 +639,7 @@ const Pmt = () => {
             Compétences associées
           </h2>
 
-          <ul className="skills__list">
+          <ul className="skills__list__large">
             <li>
               🖥️ Développement back-end avec <strong>Java Spring Boot</strong>
             </li>

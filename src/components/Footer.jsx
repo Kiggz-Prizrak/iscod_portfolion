@@ -23,7 +23,7 @@ const Footer = () => {
             Développeur Full Stack · Expert en ingénierie logicielle
           </p>
           <p className="footer__quote">
-            « Concevoir des systèmes fiables, performants et humains. »
+            « Concevozir des systèmes fiables, performants et humains. »
           </p>
         </div>
 
@@ -44,7 +44,7 @@ const Footer = () => {
               <a href="/about">Vision</a>
             </li>
             <li>
-              <a href={(window.location.href = href)}>Contact</a>
+              <a href={href}>Contact</a>
             </li>
           </ul>
         </nav>

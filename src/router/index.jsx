@@ -45,9 +45,9 @@ const router = createBrowserRouter([
         children: [
           { index: true, element: <Projects /> },
           { path: "lyseo", element: <Lyseo /> },
-          { path: "kanban", element: <KanbanWebApp /> },
+          { path: "kanban-web-app", element: <KanbanWebApp /> },
           { path: "pmt", element: <Pmt /> },
-          { path: "lft", element: <Lft /> },
+          { path: "large-field-theater", element: <Lft /> },
           { path: "groupomania", element: <Groupomania /> },
         ],
       },

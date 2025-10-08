@@ -190,7 +190,7 @@ const Header = () => {
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to="/projects/lft" onClick={closeAll}>
+                  <NavLink to="/projects/large-field-theater" onClick={closeAll}>
                     Large Field Theater
                   </NavLink>
                 </li>
@@ -200,7 +200,7 @@ const Header = () => {
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to="/projects/kanban" onClick={closeAll}>
+                  <NavLink to="/projects/kanban-web-app" onClick={closeAll}>
                     Kanban Web App
                   </NavLink>
                 </li>
