@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const ResolutionProblemesSkill = () => {
   return (
@@ -72,9 +73,9 @@ const ResolutionProblemesSkill = () => {
           </p>
           <p className="proof__link">
             →{" "}
-            <a href="/projects/large-field-theater">
+            <Link href="/projects/large-field-theater">
               Voir le projet Large Field Theater
-            </a>
+            </Link>
           </p>
         </article>
 
@@ -100,7 +101,7 @@ const ResolutionProblemesSkill = () => {
             déploiement reproductible sur n’importe quel environnement.
           </p>
           <p className="proof__link">
-            → <a href="/projects/pmt">Voir le projet PMT</a>
+            → <Link href="/projects/pmt">Voir le projet PMT</Link>
           </p>
         </article>
 
@@ -126,7 +127,9 @@ const ResolutionProblemesSkill = () => {
           </p>
           <p className="proof__link">
             →{" "}
-            <a href="/projects/kanban-web-app">Voir le projet Kanban Web App</a>
+            <Link href="/projects/kanban-web-app">
+              Voir le projet Kanban Web App
+            </Link>
           </p>
         </article>
       </section>
@@ -178,20 +181,20 @@ const ResolutionProblemesSkill = () => {
       <section className="skill__section">
         <h2 className="skill__subtitle neon-blue">Réalisations associées</h2>
         <div className="skill__cards">
-          <a href="/projects/large-field-theater" className="skill__card">
+          <Link href="/projects/large-field-theater" className="skill__card">
             <h3>🎭 Large Field Theater</h3>
             <p>Analyse mémoire · Synchronisation WebSocket</p>
-          </a>
+          </Link>
 
-          <a href="/projects/pmt" className="skill__card">
+          <Link href="/projects/pmt" className="skill__card">
             <h3>📦 Project Management Tool</h3>
             <p>CI/CD · Debug pipeline · Docker</p>
-          </a>
+          </Link>
 
-          <a href="/projects/kanban-web-app" className="skill__card">
+          <Link href="/projects/kanban-web-app" className="skill__card">
             <h3>🧩 Kanban Web App</h3>
             <p>React Hooks · Analyse des flux · Debug UI</p>
-          </a>
+          </Link>
         </div>
       </section>
     </main>

@@ -16,6 +16,8 @@ import {
   faCompass,
   faDatabase,
 } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
+
 const Skills = () => {
   const technicalSkills = [
     {
@@ -179,20 +181,20 @@ const Skills = () => {
         <div className="skills__grid">
           {technicalSkills.map((skill) => (
             <div key={skill.id} className="skill__card bg-grid">
-              <a href={skill.link} className="skill__main-link">
+              <Link href={skill.link} className="skill__main-link">
                 <FontAwesomeIcon icon={skill.icon} className="skill__icon" />
                 <h3 className="skill__title">{skill.title}</h3>
                 <p className="skill__desc">{skill.description}</p>
-              </a>
+              </Link>
               <div className="skill__projects">
                 {skill.projects.map((project, index) => (
-                  <a
+                  <Link
                     key={index}
                     href={project.link}
                     className="skill__project-btn"
                   >
                     {project.name}
-                  </a>
+                  </Link>
                 ))}
               </div>
             </div>
@@ -205,20 +207,20 @@ const Skills = () => {
         <div className="skills__grid">
           {humanSkills.map((skill) => (
             <div key={skill.id} className="skill__card bg-grid">
-              <a href={skill.link} className="skill__main-link">
+              <Link href={skill.link} className="skill__main-link">
                 <FontAwesomeIcon icon={skill.icon} className="skill__icon" />
                 <h3 className="skill__title">{skill.title}</h3>
                 <p className="skill__desc">{skill.description}</p>
-              </a>
+              </Link>
               <div className="skill__projects">
                 {skill.projects.map((project, index) => (
-                  <a
+                  <Link
                     key={index}
                     href={project.link}
                     className="skill__project-btn"
                   >
                     {project.name}
-                  </a>
+                  </Link>
                 ))}
               </div>
             </div>

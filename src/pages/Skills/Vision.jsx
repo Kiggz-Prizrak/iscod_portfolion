@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const VisionSkill = () => {
   return (
@@ -69,9 +70,9 @@ const VisionSkill = () => {
           </p>
           <p className="proof__link">
             →{" "}
-            <a href="/projects/large-field-theater">
+            <Link href="/projects/large-field-theater">
               Voir le projet Large Field Theater
-            </a>
+            </Link>
           </p>
         </article>
 
@@ -97,7 +98,7 @@ const VisionSkill = () => {
             documentation.
           </p>
           <p className="proof__link">
-            → <a href="/projects/pmt">Voir le projet PMT</a>
+            → <Link href="/projects/pmt">Voir le projet PMT</Link>
           </p>
         </article>
 
@@ -173,17 +174,17 @@ const VisionSkill = () => {
       <section className="skill__section">
         <h2 className="skill__subtitle neon-blue">Réalisations associées</h2>
         <div className="skill__cards">
-          <a href="/projects/large-field-theater" className="skill__card">
+          <Link href="/projects/large-field-theater" className="skill__card">
             <h3>🎭 Large Field Theater</h3>
             <p>
               Architecture modulaire · C# / Node.js · Coordination multi-pôles
             </p>
-          </a>
+          </Link>
 
-          <a href="/projects/pmt" className="skill__card">
+          <Link href="/projects/pmt" className="skill__card">
             <h3>📦 Project Management Tool</h3>
             <p>Vision DevOps · CI/CD · Documentation structurée</p>
-          </a>
+          </Link>
         </div>
       </section>
     </main>

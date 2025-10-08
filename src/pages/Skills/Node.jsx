@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const NodeSkill = () => {
   return (
@@ -149,20 +150,20 @@ const NodeSkill = () => {
         <h2 className="skill__subtitle neon-blue">Réalisations associées</h2>
 
         <div className="skill__cards">
-          <a href="/projects/large-field-theater" className="skill__card">
+          <Link href="/projects/large-field-theater" className="skill__card">
             <h3>🎭 Large Field Theater</h3>
             <p>Node.js · Socket.IO · Docker · MySQL</p>
-          </a>
+          </Link>
 
-          <a href="/projects/groupomania" className="skill__card">
+          <Link href="/projects/groupomania" className="skill__card">
             <h3>💬 Groupomania</h3>
             <p>Node.js · Express · Sequelize · JWT</p>
-          </a>
+          </Link>
 
-          <a href="/projects/dem-server" className="skill__card">
+          <Link href="/projects/dem-server" className="skill__card">
             <h3>🧠 DEM Server</h3>
             <p>Node.js · ADB · WebSocket · Communication réseau</p>
-          </a>
+          </Link>
         </div>
       </section>
     </main>

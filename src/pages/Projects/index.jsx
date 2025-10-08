@@ -119,9 +119,13 @@ const Projects = () => {
 
             <div className="project__skills">
               {project.skills.map((skill, index) => (
-                <a key={index} href={skill.link} className="project__skill-tag">
+                <Link
+                  key={index}
+                  href={skill.link}
+                  className="project__skill-tag"
+                >
                   {skill.name}
-                </a>
+                </Link>
               ))}
             </div>
 

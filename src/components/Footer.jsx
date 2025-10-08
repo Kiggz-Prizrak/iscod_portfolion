@@ -6,6 +6,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope, faCode } from "@fortawesome/free-solid-svg-icons";
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   const to = "nico.peignot@outlook.fr";
@@ -22,9 +23,6 @@ const Footer = () => {
           <p className="highlight-blue">
             Développeur Full Stack · Expert en ingénierie logicielle
           </p>
-          <p className="footer__quote">
-            « Concevozir des systèmes fiables, performants et humains. »
-          </p>
         </div>
 
         {/* Bloc Navigation */}
@@ -32,19 +30,19 @@ const Footer = () => {
           <h3 className="neon-blue">Navigation</h3>
           <ul>
             <li>
-              <a href="/">Accueil</a>
+              <Link href="/">Accueil</Link>
             </li>
             <li>
-              <a href="/projects">Projets</a>
+              <Link href="/projects">Projets</Link>
             </li>
             <li>
-              <a href="/skills">Compétences</a>
+              <Link href="/skills">Compétences</Link>
             </li>
             <li>
-              <a href="/about">Vision</a>
+              <Link href="/about">Vision</Link>
             </li>
             <li>
-              <a href={href}>Contact</a>
+              <Link href={href}>Contact</Link>
             </li>
           </ul>
         </nav>
@@ -54,27 +52,27 @@ const Footer = () => {
           <h3 className="neon-pink">Réseaux & Contact</h3>
           <ul>
             <li>
-              <a href="mailto:nico.peignot@outlook.fr">
+              <Link href="mailto:nico.peignot@outlook.fr">
                 <FontAwesomeIcon icon={faEnvelope} /> nico.peignot@outlook.fr
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 href="https://github.com/Kiggz-Prizrak"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <FontAwesomeIcon icon={faGithub} /> GitHub
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 href="https://www.linkedin.com/in/nicolas-peignot-050796170"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <FontAwesomeIcon icon={faLinkedin} /> LinkedIn
-              </a>
+              </Link>
             </li>
           </ul>
         </div>

@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const ReactSkill = () => {
   return (
     <main className="bg-nebula bg-stars">
@@ -64,9 +66,9 @@ const ReactSkill = () => {
           </p>
           <p className="proof__link">
             →{" "}
-            <a href="/projects/large-field-theater">
+            <Link href="/projects/large-field-theater">
               Voir le projet Large Field Theater
-            </a>
+            </Link>
           </p>
         </article>
 
@@ -88,7 +90,9 @@ const ReactSkill = () => {
           </p>
           <p className="proof__link">
             →{" "}
-            <a href="/projects/kanban-web-app">Voir le projet Kanban Web App</a>
+            <Link href="/projects/kanban-web-app">
+              Voir le projet Kanban Web App
+            </Link>
           </p>
         </article>
 
@@ -100,7 +104,7 @@ const ReactSkill = () => {
             modulaires, gestion d’état et structure claire.
           </p>
           <p className="proof__link">
-            → <a href="/projects/pmt">Voir le projet PMT</a>
+            → <Link href="/projects/pmt">Voir le projet PMT</Link>
           </p>
         </article>
       </section>
@@ -151,20 +155,20 @@ const ReactSkill = () => {
         <h2 className="skill__subtitle neon-blue">Réalisations associées</h2>
 
         <div className="skill__cards">
-          <a href="/projects/large-field-theater" className="skill__card">
+          <Link href="/projects/large-field-theater" className="skill__card">
             <h3>🎭 Large Field Theater</h3>
             <p>React · Redux · WebSocket</p>
-          </a>
+          </Link>
 
-          <a href="/projects/kanban-web-app" className="skill__card">
+          <Link href="/projects/kanban-web-app" className="skill__card">
             <h3>🧩 Kanban Web App</h3>
             <p>React · Redux Persist · DnD</p>
-          </a>
+          </Link>
 
-          <a href="/projects/pmt" className="skill__card">
+          <Link href="/projects/pmt" className="skill__card">
             <h3>🚀 PMT</h3>
             <p>Architecture & réflexes d’interface</p>
-          </a>
+          </Link>
         </div>
       </section>
     </main>

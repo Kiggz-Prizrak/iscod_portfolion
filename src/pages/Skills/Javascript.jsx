@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const JavascriptSkill = () => {
   return (
@@ -63,9 +64,9 @@ const JavascriptSkill = () => {
           </p>
           <p className="proof__link">
             →{" "}
-            <a href="/projects/large-field-theater">
+            <Link href="/projects/large-field-theater">
               Voir le projet Large Field Theater
-            </a>
+            </Link>
           </p>
         </article>
 
@@ -91,7 +92,9 @@ const JavascriptSkill = () => {
           </p>
           <p className="proof__link">
             →{" "}
-            <a href="/projects/kanban-web-app">Voir le projet Kanban Web App</a>
+            <Link href="/projects/kanban-web-app">
+              Voir le projet Kanban Web App
+            </Link>
           </p>
         </article>
 
@@ -106,7 +109,7 @@ const JavascriptSkill = () => {
             front-back.
           </p>
           <p className="proof__link">
-            → <a href="/projects/pmt">Voir le projet PMT</a>
+            → <Link href="/projects/pmt">Voir le projet PMT</Link>
           </p>
         </article>
       </section>
@@ -163,20 +166,20 @@ const JavascriptSkill = () => {
         <h2 className="skill__subtitle neon-blue">Réalisations associées</h2>
 
         <div className="skill__cards">
-          <a href="/projects/large-field-theater" className="skill__card">
+          <Link href="/projects/large-field-theater" className="skill__card">
             <h3>🎭 Large Field Theater</h3>
             <p>React · Redux · Node.js · WebSocket</p>
-          </a>
+          </Link>
 
-          <a href="/projects/kanban-web-app" className="skill__card">
+          <Link href="/projects/kanban-web-app" className="skill__card">
             <h3>🧩 Kanban Web App</h3>
             <p>React · Redux Toolkit · DnD</p>
-          </a>
+          </Link>
 
-          <a href="/projects/pmt" className="skill__card">
+          <Link href="/projects/pmt" className="skill__card">
             <h3>📦 Project Management Tool</h3>
             <p>Angular · TypeScript · Architecture orientée objets</p>
-          </a>
+          </Link>
         </div>
       </section>
     </main>

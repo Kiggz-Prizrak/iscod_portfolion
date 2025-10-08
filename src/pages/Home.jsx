@@ -1,6 +1,7 @@
 import React from "react";
 import Hero from "../components/Hero";
 import Timeline from "../components/Timeline";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
@@ -8,18 +9,18 @@ const Home = () => {
       <Hero
         title="Expert en ingénierie logicielle  "
         subtitle="Fullstack Developer → React | Vue | Angular | Node.js | Rust | Java"
-        image="/assets/profileb.jpg"
+        image="https://media.licdn.com/dms/image/v2/D4D03AQEjeupxxjag6g/profile-displayphoto-shrink_800_800/B4DZeEa.6oGUAg-/0/1750273356399?e=1762992000&v=beta&t=o8FJMUkoXsShqbHKfC8oQ2wFV88qJLR7hVT5IkFD1GI"
         actions={
           <>
-            <a className="btn btn--primary" href="/about">
+            <Link className="btn btn--primary" href="/about">
               Découvrir mes valeurs
-            </a>
-            <a className="btn btn--blue" href="/skills">
+            </Link>
+            <Link className="btn btn--blue" to="/skills">
               Explorer mes compétences
-            </a>
-            <a className="btn btn--pink" href="/projects">
+            </Link>
+            <Link className="btn btn--pink" href="/projects">
               Voir mes réalisations
-            </a>
+            </Link>
           </>
         }
       />

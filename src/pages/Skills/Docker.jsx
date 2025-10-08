@@ -73,9 +73,9 @@ const DockerSkill = () => {
           </p>
           <p className="proof__link">
             →{" "}
-            <a href="/projects/large-field-theater">
+            <Link href="/projects/large-field-theater">
               Voir le projet Large Field Theater
-            </a>
+            </Link>
           </p>
         </article>
 
@@ -101,7 +101,7 @@ const DockerSkill = () => {
             automatisée, validée par le jury ISCOD en juin 2025.
           </p>
           <p className="proof__link">
-            → <a href="/projects/pmt">Voir le projet PMT</a>
+            → <Link href="/projects/pmt">Voir le projet PMT</Link>
           </p>
         </article>
 
@@ -189,15 +189,15 @@ const DockerSkill = () => {
         <h2 className="skill__subtitle neon-blue">Réalisations associées</h2>
 
         <div className="skill__cards">
-          <a href="/projects/large-field-theater" className="skill__card">
+          <Link href="/projects/large-field-theater" className="skill__card">
             <h3>🎭 Large Field Theater</h3>
             <p>Backend Node.js · MySQL · Docker Compose</p>
-          </a>
+          </Link>
 
-          <a href="/projects/pmt" className="skill__card">
+          <Link href="/projects/pmt" className="skill__card">
             <h3>📦 Project Management Tool</h3>
             <p>Java Spring Boot · Angular · GitLab CI/CD</p>
-          </a>
+          </Link>
         </div>
       </section>
     </main>

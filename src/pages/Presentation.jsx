@@ -4,21 +4,7 @@ import Hero from "../components/Hero";
 const Presentation = () => {
   return (
     <main className="">
-      {/* <Hero
-        title="Expert en ingénierie logicielle  "
-        subtitle="Fullstack Developer → React | Vue | Angular | Node.js | Rust | Java"
-        image="/assets/profileb.jpg"
-        actions={
-          <>
-            <a className="btn btn--blue" href="/skills">
-              Explorer mes compétences
-            </a>
-            <a className="btn btn--pink" href="/projects">
-              Voir mes réalisations
-            </a>
-          </>
-        }
-      /> */}
+
       <div className="about">
         <section className="about__section">
           <h2 className="about__title neon-pink">Présentation</h2>

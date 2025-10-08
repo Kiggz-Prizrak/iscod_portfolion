@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const MysqlSkill = () => {
   return (
@@ -62,9 +63,9 @@ const MysqlSkill = () => {
           </p>
           <p className="proof__link">
             →{" "}
-            <a href="/projects/large-field-theater">
+            <Link href="/projects/large-field-theater">
               Voir le projet Large Field Theater
-            </a>
+            </Link>
           </p>
         </article>
 
@@ -94,7 +95,7 @@ const MysqlSkill = () => {
             professionnels et totalement intégrée au pipeline CI/CD.
           </p>
           <p className="proof__link">
-            → <a href="/projects/pmt">Voir le projet PMT</a>
+            → <Link href="/projects/pmt">Voir le projet PMT</Link>
           </p>
         </article>
 
@@ -159,20 +160,20 @@ const MysqlSkill = () => {
         <h2 className="skill__subtitle neon-blue">Réalisations associées</h2>
 
         <div className="skill__cards">
-          <a href="/projects/large-field-theater" className="skill__card">
+          <Link href="/projects/large-field-theater" className="skill__card">
             <h3>🎭 Large Field Theater</h3>
             <p>Base relationnelle devices / sessions / DEM servers</p>
-          </a>
+          </Link>
 
-          <a href="/projects/pmt" className="skill__card">
+          <Link href="/projects/pmt" className="skill__card">
             <h3>📦 Project Management Tool</h3>
             <p>Modèle JPA · Transactions · MySQL containerisé</p>
-          </a>
+          </Link>
 
-          <a href="/projects/groupomania" className="skill__card">
+          <Link href="/projects/groupomania" className="skill__card">
             <h3>💬 Groupomania</h3>
             <p>Sequelize ORM · Authentification · MySQL backend</p>
-          </a>
+          </Link>
         </div>
       </section>
     </main>
