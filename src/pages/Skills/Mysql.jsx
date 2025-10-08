@@ -63,7 +63,7 @@ const MysqlSkill = () => {
           </p>
           <p className="proof__link">
             →{" "}
-            <Link href="/projects/large-field-theater">
+            <Link to="/projects/large-field-theater">
               Voir le projet Large Field Theater
             </Link>
           </p>
@@ -95,7 +95,7 @@ const MysqlSkill = () => {
             professionnels et totalement intégrée au pipeline CI/CD.
           </p>
           <p className="proof__link">
-            → <Link href="/projects/pmt">Voir le projet PMT</Link>
+            → <Link to="/projects/pmt">Voir le projet PMT</Link>
           </p>
         </article>
 
@@ -160,17 +160,17 @@ const MysqlSkill = () => {
         <h2 className="skill__subtitle neon-blue">Réalisations associées</h2>
 
         <div className="skill__cards">
-          <Link href="/projects/large-field-theater" className="skill__card">
+          <Link to="/projects/large-field-theater" className="skill__card">
             <h3>🎭 Large Field Theater</h3>
             <p>Base relationnelle devices / sessions / DEM servers</p>
           </Link>
 
-          <Link href="/projects/pmt" className="skill__card">
+          <Link to="/projects/pmt" className="skill__card">
             <h3>📦 Project Management Tool</h3>
             <p>Modèle JPA · Transactions · MySQL containerisé</p>
           </Link>
 
-          <Link href="/projects/groupomania" className="skill__card">
+          <Link to="/projects/groupomania" className="skill__card">
             <h3>💬 Groupomania</h3>
             <p>Sequelize ORM · Authentification · MySQL backend</p>
           </Link>

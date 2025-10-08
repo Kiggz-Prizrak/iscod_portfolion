@@ -181,7 +181,7 @@ const Skills = () => {
         <div className="skills__grid">
           {technicalSkills.map((skill) => (
             <div key={skill.id} className="skill__card bg-grid">
-              <Link href={skill.link} className="skill__main-link">
+              <Link to={skill.link} className="skill__main-link">
                 <FontAwesomeIcon icon={skill.icon} className="skill__icon" />
                 <h3 className="skill__title">{skill.title}</h3>
                 <p className="skill__desc">{skill.description}</p>
@@ -190,7 +190,7 @@ const Skills = () => {
                 {skill.projects.map((project, index) => (
                   <Link
                     key={index}
-                    href={project.link}
+                    to={project.link}
                     className="skill__project-btn"
                   >
                     {project.name}
@@ -207,7 +207,7 @@ const Skills = () => {
         <div className="skills__grid">
           {humanSkills.map((skill) => (
             <div key={skill.id} className="skill__card bg-grid">
-              <Link href={skill.link} className="skill__main-link">
+              <Link to={skill.link} className="skill__main-link">
                 <FontAwesomeIcon icon={skill.icon} className="skill__icon" />
                 <h3 className="skill__title">{skill.title}</h3>
                 <p className="skill__desc">{skill.description}</p>
@@ -216,7 +216,7 @@ const Skills = () => {
                 {skill.projects.map((project, index) => (
                   <Link
                     key={index}
-                    href={project.link}
+                    to={project.link}
                     className="skill__project-btn"
                   >
                     {project.name}

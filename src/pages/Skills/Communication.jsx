@@ -73,7 +73,7 @@ const CommunicationSkill = () => {
           </p>
           <p className="proof__link">
             →{" "}
-            <Link href="/projects/large-field-theater">
+            <Link to="/projects/large-field-theater">
               Voir le projet Large Field Theater
             </Link>
           </p>
@@ -103,7 +103,7 @@ const CommunicationSkill = () => {
             back.
           </p>
           <p className="proof__link">
-            → <Link href="/projects/pmt">Voir le projet PMT</Link>
+            → <Link to="/projects/pmt">Voir le projet PMT</Link>
           </p>
         </article>
 
@@ -183,17 +183,17 @@ const CommunicationSkill = () => {
       <section className="skill__section">
         <h2 className="skill__subtitle neon-blue">Réalisations associées</h2>
         <div className="skill__cards">
-          <Link href="/projects/large-field-theater" className="skill__card">
+          <Link to="/projects/large-field-theater" className="skill__card">
             <h3>🎭 Large Field Theater</h3>
             <p>Coordination multi-pôles · Documentation des flux</p>
           </Link>
 
-          <Link href="/projects/pmt" className="skill__card">
+          <Link to="/projects/pmt" className="skill__card">
             <h3>📦 Project Management Tool</h3>
             <p>Documentation technique · CI/CD · Transmission de savoir</p>
           </Link>
 
-          <Link href="/projects/kanban-web-app" className="skill__card">
+          <Link to="/projects/kanban-web-app" className="skill__card">
             <h3>🧩 Kanban Web App</h3>
             <p>Clarté du code · Structuration des composants</p>
           </Link>

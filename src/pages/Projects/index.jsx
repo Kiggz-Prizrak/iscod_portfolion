@@ -121,7 +121,7 @@ const Projects = () => {
               {project.skills.map((skill, index) => (
                 <Link
                   key={index}
-                  href={skill.link}
+                  to={skill.link}
                   className="project__skill-tag"
                 >
                   {skill.name}

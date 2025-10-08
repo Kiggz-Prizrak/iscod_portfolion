@@ -150,17 +150,17 @@ const NodeSkill = () => {
         <h2 className="skill__subtitle neon-blue">Réalisations associées</h2>
 
         <div className="skill__cards">
-          <Link href="/projects/large-field-theater" className="skill__card">
+          <Link to="/projects/large-field-theater" className="skill__card">
             <h3>🎭 Large Field Theater</h3>
             <p>Node.js · Socket.IO · Docker · MySQL</p>
           </Link>
 
-          <Link href="/projects/groupomania" className="skill__card">
+          <Link to="/projects/groupomania" className="skill__card">
             <h3>💬 Groupomania</h3>
             <p>Node.js · Express · Sequelize · JWT</p>
           </Link>
 
-          <Link href="/projects/dem-server" className="skill__card">
+          <Link to="/projects/dem-server" className="skill__card">
             <h3>🧠 DEM Server</h3>
             <p>Node.js · ADB · WebSocket · Communication réseau</p>
           </Link>

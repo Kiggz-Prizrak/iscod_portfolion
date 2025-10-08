@@ -70,7 +70,7 @@ const VisionSkill = () => {
           </p>
           <p className="proof__link">
             →{" "}
-            <Link href="/projects/large-field-theater">
+            <Link to="/projects/large-field-theater">
               Voir le projet Large Field Theater
             </Link>
           </p>
@@ -98,7 +98,7 @@ const VisionSkill = () => {
             documentation.
           </p>
           <p className="proof__link">
-            → <Link href="/projects/pmt">Voir le projet PMT</Link>
+            → <Link to="/projects/pmt">Voir le projet PMT</Link>
           </p>
         </article>
 
@@ -174,14 +174,14 @@ const VisionSkill = () => {
       <section className="skill__section">
         <h2 className="skill__subtitle neon-blue">Réalisations associées</h2>
         <div className="skill__cards">
-          <Link href="/projects/large-field-theater" className="skill__card">
+          <Link to="/projects/large-field-theater" className="skill__card">
             <h3>🎭 Large Field Theater</h3>
             <p>
               Architecture modulaire · C# / Node.js · Coordination multi-pôles
             </p>
           </Link>
 
-          <Link href="/projects/pmt" className="skill__card">
+          <Link to="/projects/pmt" className="skill__card">
             <h3>📦 Project Management Tool</h3>
             <p>Vision DevOps · CI/CD · Documentation structurée</p>
           </Link>

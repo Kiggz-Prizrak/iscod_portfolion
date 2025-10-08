@@ -71,7 +71,7 @@ const GestionProjetSkill = () => {
           </p>
           <p className="proof__link">
             →{" "}
-            <Link href="/projects/large-field-theater">
+            <Link to="/projects/large-field-theater">
               Voir le projet Large Field Theater
             </Link>
           </p>
@@ -102,7 +102,7 @@ const GestionProjetSkill = () => {
             comme exemple de gestion agile et d’intégration continue.
           </p>
           <p className="proof__link">
-            → <Link href="/projects/pmt">Voir le projet PMT</Link>
+            → <Link to="/projects/pmt">Voir le projet PMT</Link>
           </p>
         </article>
 
@@ -128,7 +128,7 @@ const GestionProjetSkill = () => {
           </p>
           <p className="proof__link">
             →{" "}
-            <Link href="/projects/kanban-web-app">
+            <Link to="/projects/kanban-web-app">
               Voir le projet Kanban Web App
             </Link>
           </p>
@@ -183,17 +183,17 @@ const GestionProjetSkill = () => {
       <section className="skill__section">
         <h2 className="skill__subtitle neon-blue">Réalisations associées</h2>
         <div className="skill__cards">
-          <Link href="/projects/large-field-theater" className="skill__card">
+          <Link to="/projects/large-field-theater" className="skill__card">
             <h3>🎭 Large Field Theater</h3>
             <p>Sprints agiles · Coordination multi-pôles</p>
           </Link>
 
-          <Link href="/projects/pmt" className="skill__card">
+          <Link to="/projects/pmt" className="skill__card">
             <h3>📦 Project Management Tool</h3>
             <p>CI/CD · Gestion des priorités · Méthode Agile</p>
           </Link>
 
-          <Link href="/projects/kanban-web-app" className="skill__card">
+          <Link to="/projects/kanban-web-app" className="skill__card">
             <h3>🧩 Kanban Web App</h3>
             <p>Visualisation du flux · Esprit agile</p>
           </Link>
