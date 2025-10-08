@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createHashRouter } from "react-router-dom";
 
 import Root from "./Root";
 import ErrorPage from "../pages/ErrorPage";
@@ -29,7 +29,7 @@ import CollaborationSkill from "../pages/Skills/Collaboration";
 import GestionProjetSkill from "../pages/Skills/GestionProjet";
 import ResolutionProblemesSkill from "../pages/Skills/ResolutionProblemes";
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: "/",
     element: <Root />,
