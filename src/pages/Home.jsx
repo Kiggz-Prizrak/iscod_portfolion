@@ -9,7 +9,7 @@ const Home = () => {
       <Hero
         title="Expert en ingénierie logicielle  "
         subtitle="Fullstack Developer → React | Vue | Angular | Node.js | Rust | Java"
-        image="https://media.licdn.com/dms/image/v2/D4D03AQEjeupxxjag6g/profile-displayphoto-shrink_800_800/B4DZeEa.6oGUAg-/0/1750273356399?e=1762992000&v=beta&t=o8FJMUkoXsShqbHKfC8oQ2wFV88qJLR7hVT5IkFD1GI"
+        image="./assets/profileb.jpg"
         actions={
           <>
             <Link className="btn btn--primary" to="/about">

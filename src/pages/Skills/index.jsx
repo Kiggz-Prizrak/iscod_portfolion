@@ -50,7 +50,7 @@ const Skills = () => {
       icon: faNodeJs,
       description:
         "Développement d’APIs REST et WebSocket performantes. Communication en temps réel et gestion de serveurs VR.",
-      link: "/skills/nodejs",
+      link: "/skills/node",
       projects: [
         { name: "Large Field Theater", link: "/projects/large-field-theater" },
         { name: "Groupomania", link: "/projects/groupomania" },
@@ -80,15 +80,15 @@ const Skills = () => {
         { name: "Groupomania", link: "/projects/groupomania" },
       ],
     },
-    {
-      id: "java",
-      title: "Java / Spring Boot",
-      icon: faJava,
-      description:
-        "Développement structuré et sécurisé. Architecture REST, MVC, authentification et CI/CD sous Docker.",
-      link: "/skills/java",
-      projects: [{ name: "PMT", link: "/projects/pmt" }],
-    },
+    // {
+    //   id: "java",
+    //   title: "Java / Spring Boot",
+    //   icon: faJava,
+    //   description:
+    //     "Développement structuré et sécurisé. Architecture REST, MVC, authentification et CI/CD sous Docker.",
+    //   link: "/skills/java",
+    //   projects: [{ name: "PMT", link: "/projects/pmt" }],
+    // },
   ];
 
   const humanSkills = [
@@ -146,7 +146,7 @@ const Skills = () => {
       icon: faHandsHelping,
       description:
         "Savoir travailler en méthode agile, synchroniser avec plusieurs développeurs et maintenir une cohésion d’équipe.",
-      link: "/skills/colaboration",
+      link: "/skills/collaboration",
       projects: [
         { name: "Large Field Theater", link: "/projects/large-field-theater" },
         { name: "PMT", link: "/projects/pmt" },
